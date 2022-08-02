@@ -7,7 +7,7 @@
 > 작성 일자 : 2022-08-02<br/>
 > 사용 툴 : Figma
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/105365737/182293382-e97bc3b6-1e1f-4224-9d92-3dad9d082e57.png" />
+  <img src="https://user-images.githubusercontent.com/105365737/182493584-d2a1b6d7-b802-48e0-a211-1bab24671acb.png" />
 </p>
 <br/>
 
