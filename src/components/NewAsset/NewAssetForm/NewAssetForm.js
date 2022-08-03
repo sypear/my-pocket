@@ -132,6 +132,7 @@ const NewAssetForm = (props) => {
                                 name="amount-type"
                                 value="expense"
                                 onChange={amountTypeChangeHandler}
+                                checked={enteredAmountType === "expense" || ""}
                                 required />
                             <label htmlFor="expense" className="fs-small">지출</label>
                         </div>
