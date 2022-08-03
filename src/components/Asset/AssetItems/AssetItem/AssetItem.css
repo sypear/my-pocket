@@ -1,5 +1,6 @@
 .item {
     display: flex;
+    justify-content: space-between;
     align-items: flex-end;
     padding: 18px 14px;
     margin-bottom: 20px;
@@ -18,7 +19,7 @@
 }
 
 .item__title h3 {
-    width: 230px;
+    width: 200px;
     margin-bottom: 4px;
 }
 

@@ -3,16 +3,26 @@
     width: 438px;
     padding: 30px 43px;
     margin: 30px auto;
-    /* text-align: center; */
     text-align: left;
     border-radius: 5px;
     background-color: #FFFFFF;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
-    /* cursor: pointer; */
     cursor: auto;
 }
 
-.new-asset h1 {
+.new-asset__create-btn {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.new-asset__create h1 {
     margin-bottom: 32px;
 }
 

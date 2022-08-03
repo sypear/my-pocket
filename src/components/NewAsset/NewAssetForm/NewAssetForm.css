@@ -1,4 +1,3 @@
-
 .new-asset__control {
     display: flex;
     flex-flow: column;
@@ -21,12 +20,12 @@
     margin-bottom: 2px;
 }
 
-.amount__title {
+.new-asset__control--title {
     display: flex;
     align-items: baseline;
 }
 
-.amount__title h2 {
+.new-asset__control--title h2 {
     margin-right: 10px;
 }
 

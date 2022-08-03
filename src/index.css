@@ -17,6 +17,10 @@ body {
 	background-color: #5D5FEF;
 }
 
+div {
+	word-break: keep-all;
+}
+
 button,
 input,
 textarea,

@@ -25,8 +25,9 @@
 
 .detail-desc {
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
     flex-grow: 1;
+    width: 50%;
 }
