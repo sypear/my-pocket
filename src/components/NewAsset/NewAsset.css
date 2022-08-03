@@ -1,0 +1,27 @@
+.new-asset {
+    position: relative;
+    width: 438px;
+    padding: 30px 43px;
+    margin: 30px auto;
+    /* text-align: center; */
+    text-align: left;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    /* cursor: pointer; */
+    cursor: auto;
+}
+
+.new-asset h1 {
+    margin-bottom: 32px;
+}
+
+.new-asset__create:before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    width: 352px;
+    height: 0px;
+    opacity: 0.5;
+    border: 1px solid #DEDEDE;
+}

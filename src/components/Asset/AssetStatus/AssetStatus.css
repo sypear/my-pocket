@@ -1,0 +1,32 @@
+.title {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.detail {
+    display: flex;
+    padding: 15px 0;
+    margin-bottom: 60px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.detail::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 45px;
+    opacity: 0.5;
+    border: 1px solid #DEDEDE;
+}
+
+.detail-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    flex-grow: 1;
+}

@@ -1,0 +1,43 @@
+.item {
+    display: flex;
+    align-items: flex-end;
+    padding: 18px 14px;
+    margin-bottom: 20px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+}
+
+.item strong {
+    flex-grow: 1;
+    text-align: end;
+}
+
+.item__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item__title h3 {
+    width: 230px;
+    margin-bottom: 4px;
+}
+
+.item__delete {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+    text-align: center;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.income-item {
+    border-right: 5px solid #5ADB5A;
+}
+
+.expense-item {
+    border-right: 5px solid #FF5B5B;
+}

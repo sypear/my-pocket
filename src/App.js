@@ -1,11 +1,16 @@
 import React from "react";
 
-import History from "./components/History/History";
+import NewAsset from "./components/NewAsset/NewAsset";
+import Asset from "./components/Asset/Asset";
+
+import "./components/UI/Font.css";
+import "./components/UI/Button.css";
 
 const App = () => {
   return (
     <>
-      <History />
+      <NewAsset />
+      <Asset />
     </>
   );
 };
