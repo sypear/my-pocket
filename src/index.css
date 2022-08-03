@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+* {
+	margin: 0;
+	box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	-webkit-touch-callout: none;
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+
+	font-family: 'Noto Sans KR', sans-serif;
+	color: #4B4B4B;
+	letter-spacing: -2px;
+	background-color: #5D5FEF;
+}
+
+button,
+input,
+textarea,
+select {
+	font-family: 'Noto Sans KR', sans-serif;
+	color: #4B4B4B;
+	letter-spacing: -1px;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
 }

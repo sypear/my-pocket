@@ -1,9 +1,13 @@
-function App() {
+import React from "react";
+
+import History from "./components/History/History";
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>hello world!</h1>
-    </div>
+    <>
+      <History />
+    </>
   );
-}
+};
 
 export default App;

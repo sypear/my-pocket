@@ -1,0 +1,57 @@
+.fs-tiny {
+    font-size: 12px;
+}
+
+.fs-small {
+    font-size: 14px;
+}
+
+.fs-normal {
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.fs-emphasis {
+    font-size: 20px;
+}
+
+.fs-title {
+    font-size: 32px;
+    line-height: 0.9375;
+}
+
+.fw-light {
+    font-weight: 300;
+}
+
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fc-green {
+    color: #5ADB5A;
+}
+
+.fc-red {
+    color: #FF5B5B;
+}
+
+.fc-black {
+    color: #4B4B4B;
+}
+
+.fc-grey {
+    color: #9A9A9A;
+}
+
+.fc-purple {
+    color: #5D5FEF;
+}
+
+.fc-white {
+    color: #FFF;
+}

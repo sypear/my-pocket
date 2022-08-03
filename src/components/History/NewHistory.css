@@ -1,0 +1,87 @@
+.new-history {
+    position: relative;
+    width: 438px;
+    padding: 30px 43px;
+    margin: 30px auto;
+    /* text-align: center; */
+    text-align: left;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    /* cursor: pointer; */
+    cursor: auto;
+}
+
+.new-history h1 {
+    margin-bottom: 32px;
+}
+
+.new-history__create:before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    width: 352px;
+    height: 0px;
+    opacity: 0.5;
+    border: 1px solid #DEDEDE;
+}
+
+.new-history__control {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 20px;
+}
+
+.new-history__control span {
+    margin-bottom: 5px;
+}
+
+.new-history__control input[type='date'],
+.new-history__control input[type='text'],
+.new-history__control input[type='number'] {
+    padding: 6px 9px;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+}
+
+.new-history__control input[type='number'] {
+    margin-bottom: 2px;
+}
+
+.amount__type {
+    display: flex;
+}
+
+.amount__income {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.amount__expense {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount__income input[type='radio'],
+.amount__expense input[type='radio'] {
+    margin-right: 2px;
+    accent-color: #808080;
+}
+
+.amount__income input[type='radio']:checked,
+.amount__expense input[type='radio']:checked {
+    accent-color: #5D5FEF;
+}
+
+.new-history__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-history__actions button:first-child {
+    margin-right: 32px;
+}
