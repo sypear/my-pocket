@@ -1,22 +1,30 @@
 .fs-tiny {
     font-size: 12px;
+    letter-spacing: -1px;
+    line-height: 1.666666666666667;
 }
 
 .fs-small {
     font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 1.428571428571429;
 }
 
 .fs-normal {
     font-size: 16px;
+    letter-spacing: -1.5px;
     line-height: 1.25;
 }
 
 .fs-emphasis {
     font-size: 20px;
+    letter-spacing: -2px;
+    line-height: 1.5;
 }
 
 .fs-title {
     font-size: 32px;
+    letter-spacing: -2.5px;
     line-height: 0.9375;
 }
 
@@ -54,4 +62,10 @@
 
 .fc-white {
     color: #FFF;
+}
+
+.ft-alert {
+    display: none;
+    font-weight: 700;
+    color: #FF5B5B;
 }
