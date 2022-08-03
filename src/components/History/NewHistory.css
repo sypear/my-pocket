@@ -32,7 +32,7 @@
     margin-bottom: 20px;
 }
 
-.new-history__control span {
+.new-history__control h2 {
     margin-bottom: 5px;
 }
 
@@ -46,6 +46,15 @@
 
 .new-history__control input[type='number'] {
     margin-bottom: 2px;
+}
+
+.amount__title {
+    display: flex;
+    align-items: baseline;
+}
+
+.amount__title h2 {
+    margin-right: 10px;
 }
 
 .amount__type {

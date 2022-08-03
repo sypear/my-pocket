@@ -15,15 +15,18 @@ const History = () => {
                     <form>
                         <div className="new-history__controls">
                             <div className="new-history__control">
-                                <span>날짜</span>
+                                <h2 className="fs-normal fw-regular">날짜</h2>
                                 <input type="date" />
                             </div>
                             <div className="new-history__control">
-                                <span>제목</span>
+                                <h2 className="fs-normal fw-regular">제목</h2>
                                 <input type="text" placeholder="사용 내역을 입력해주세요." />
                             </div>
                             <div className="new-history__control">
-                                <span>금액</span>
+                                <div className="amount__title">
+                                    <h2 className="fs-normal fw-regular">금액</h2>
+                                    <span className="fs-tiny ft-alert">원 단위 숫자를 입력해주세요.</span>
+                                </div>
                                 <input type="number" placeholder="금액을 입력해주세요." />
                                 <div className="amount__type">
                                     <div className="amount__income">
@@ -53,11 +56,11 @@ const History = () => {
 
                 <div className="detail">
                     <div className="detail-desc">
-                        <span className="fw-light">수입</span>
+                        <span className="fs-normal fw-light">수입</span>
                         <strong className="fs-emphasis fc-green">300,000원</strong>
                     </div>
                     <div className="detail-desc">
-                        <span className="fw-light">지출</span>
+                        <span className="fs-normal fw-light">지출</span>
                         <strong className="fs-emphasis fc-red">50,000원</strong>
                     </div>
                 </div>
@@ -121,7 +124,7 @@ const History = () => {
                         <div className="chart-bar__item">
                             <div className="chart-bar__inner">
                                 <div className="chart-bar__fill">
-                                    <div className="chart-bar__expense">150,000</div>
+                                    <div className="chart-bar__expense fs-tiny">15,000</div>
                                 </div>
                             </div>
                             <strong className="fs-tiny fw-light">
