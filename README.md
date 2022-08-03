@@ -11,7 +11,33 @@
 </p>
 <br/>
 
-## ✔️ 구현할 기능
+## 🌲 컴포넌트 구조
+### 1. 디자인 시안을 기반으로 한 컴포넌트 구조
+![Untitled-6 copy](https://user-images.githubusercontent.com/105365737/182524646-bdc788f8-c59b-47ca-9c81-bc6931e53077.jpg)
+
+### 2. 수형도
+![다운로드 (1)](https://user-images.githubusercontent.com/105365737/182518489-f8f20988-2344-4d8a-9ce6-826cbc907d65.png)
+
+### 3. 컴포넌트 설명
+* NewAsset : 수입/지출 내역 추가 관련 컴포넌트
+  - NewAssetForm : 수입/지출 내역 추가 폼
+<br/>
+
+* Asset : 수입/지출 내역 조회 관련 컴포넌트
+  - AssetStatus : 자산 현황 관련 컴포넌트
+  - AssetItems : 연간 수입/지출 내역 관련 컴포넌트
+    - AssetItem : 각 내역
+    - AssetItemsFilter : 연도 필터
+  - AssetChart : 월 별 지출 차트 관련 컴포넌트
+    - AssetChartBar : 차트 바
+<br/>
+
+* UI : 공통 스타일 관련 컴포넌트
+  - Font : 폰트 스타일(사이즈, 굵기, 색상 등)
+  - Button : 버튼 스타일
+<br/>
+
+## ✔️ 목표 기능
 * 연도 필터링 기능
   - [ ] 연도 필터링 기능 추가
 * 연간 자산 현황 관리
