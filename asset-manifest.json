@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/my-pocket/static/css/main.154c8b49.css",
-    "main.js": "/my-pocket/static/js/main.7ea1c761.js",
+    "main.css": "/my-pocket/static/css/main.d674d275.css",
+    "main.js": "/my-pocket/static/js/main.dee40337.js",
     "index.html": "/my-pocket/index.html",
-    "main.154c8b49.css.map": "/my-pocket/static/css/main.154c8b49.css.map",
-    "main.7ea1c761.js.map": "/my-pocket/static/js/main.7ea1c761.js.map"
+    "main.d674d275.css.map": "/my-pocket/static/css/main.d674d275.css.map",
+    "main.dee40337.js.map": "/my-pocket/static/js/main.dee40337.js.map"
   },
   "entrypoints": [
-    "static/css/main.154c8b49.css",
-    "static/js/main.7ea1c761.js"
+    "static/css/main.d674d275.css",
+    "static/js/main.dee40337.js"
   ]
 }
