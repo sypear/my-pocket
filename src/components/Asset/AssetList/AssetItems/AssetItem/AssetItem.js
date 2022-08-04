@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import AssetDate from "./AssetDate/AssetDate";
 
+import { addComma } from "../../../../../common/number";
+
 import "./AssetItem.css";
 
 const AssetItem = (props) => {
@@ -48,7 +50,7 @@ const AssetItem = (props) => {
                 </div>
             </div>
             <div>
-                <strong className={fontStyle}>{sign}{props.amount}</strong>
+                <strong className={fontStyle}>{sign}{addComma(props.amount.toString())}</strong>
             </div>
         </div>
     );
