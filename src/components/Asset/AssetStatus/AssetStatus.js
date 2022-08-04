@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./AssetStatus.css";
 
-const AssetStatus = () => {
+const AssetStatus = (props) => {
+    const [totalAssets, setTotalAssets] = useState(0);
+    const [totalIncome, setTotalIncome] = useState(0);
+    const [totalExpense, setTotalExpense] = useState(0);
+
+    useEffect(() => {
+        if (props.assets.length > 0) {
+            setTotalAssets(calculateTotalHandler().assets);
+            setTotalIncome(calculateTotalHandler().income);
+            setTotalExpense(calculateTotalHandler().expense);
+        }
+    }, [props.assets]);
+
+    const calculateTotalHandler = () => {
+        // 자산, 수입, 지출 합계 계산
+        let total = {
+            assets: 0,
+            income: 0,
+            expense: 0
+        };
+
+        props.assets.map(item => {
+            if (item.amount_type === "income") {
+                total.assets += +item.amount;
+                total.income += +item.amount;
+            } else {
+                total.assets -= +item.amount;
+                total.expense += +item.amount;
+            }
+        });
+
+        return total;
+    };
+
     return (
         <>
             <div className="title">
