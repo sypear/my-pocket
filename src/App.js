@@ -28,8 +28,8 @@ const App = () => {
 
 	return (
 		<>
-			<NewAsset latestAssetId={latestAssetId} onAddAssetData={addAssetDataHandler} />
 			<Asset assets={assets} latestAssetId={latestAssetId} onDeleteAssetData={deleteAssetDataHandler} />
+			<NewAsset latestAssetId={latestAssetId} onAddAssetData={addAssetDataHandler} />
 		</>
 	);
 };
