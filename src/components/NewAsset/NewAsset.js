@@ -4,7 +4,7 @@ import NewAssetForm from "./NewAssetForm/NewAssetForm";
 
 import "./NewAsset.css";
 
-const NewAsset = () => {
+const NewAsset = (props) => {
     const [isEditing, setIsEditing] = useState(false);
 
     const startEditingHandler = () => {
@@ -13,6 +13,15 @@ const NewAsset = () => {
 
     const stopEditingHandler = () => {
         setIsEditing(false);
+    };
+
+    const saveAssetDataHandler = (enteredAssetData) => {
+        const assetData = {
+            ...enteredAssetData,
+            id: props.latestAssetId
+        };
+
+        props.onAddAssetData(assetData);
     };
 
     return (
@@ -27,7 +36,7 @@ const NewAsset = () => {
                 isEditing &&
                 <div className="new-asset__create">
                     <h1 className="fs-normal">내역 추가</h1>
-                    <NewAssetForm onCancle={stopEditingHandler} />
+                    <NewAssetForm onSaveAssetData={saveAssetDataHandler} onCancle={stopEditingHandler} />
                 </div>
             }
         </div>
