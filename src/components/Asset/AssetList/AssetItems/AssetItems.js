@@ -13,6 +13,17 @@ const AssetItems = (props) => {
         );
     }
 
+    const copyAsstes = [...props.assets];
+    const assetsSortedByDate = copyAsstes.sort((a, b) => {
+        // 날짜가 최근일수록 아래로 위치하도록 정렬
+        // 만약 날짜가 같다면 id 값이 작은 순으로(최근에 입력한 순으로) 아래로 위치하도록 정렬
+        if (new Date(a.date).getTime() === new Date(b.date).getTime()) {
+            return a.id - b.id;
+        }
+
+        return new Date(a.date) - new Date(b.date);
+    });
+
     const removeAssetDataHandler = (selectedAssetDataId) => {
         props.onRemoveAssetData(selectedAssetDataId);
     };
@@ -20,7 +31,7 @@ const AssetItems = (props) => {
     return (
         <div className="items">
             {
-                props.assets.map(asset => (
+                assetsSortedByDate.map(asset => (
                     <AssetItem
                         key={asset.id}
                         id={asset.id}
