@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import AssetStatus from "./AssetStatus/AssetStatus";
 import AssetItemsFilter from "./AssetItemsFilter/AssetItemsFilter";
 import AssetItems from "./AssetItems/AssetItems";
 import AssetChart from "./AssetChart/AssetChart";
@@ -38,8 +39,11 @@ const AssetList = (props) => {
 
     return (
         <div className="list">
-            <AssetItemsFilter onChangeFilter={filterChangeHandler} filteredYear={filteredYear} assetsYear={props.assetsYear} />
-            <AssetItems assets={filteredAssets} onRemoveAssetData={removeAssetDataHandler} />
+            <AssetStatus assets={filteredAssets} filteredYear={filteredYear} />
+            <div className="year-items">
+                <AssetItemsFilter onChangeFilter={filterChangeHandler} filteredYear={filteredYear} assetsYear={props.assetsYear} />
+                <AssetItems assets={filteredAssets} onRemoveAssetData={removeAssetDataHandler} />
+            </div>
             <AssetChart assets={filteredExpenses} />
         </div>
     );
