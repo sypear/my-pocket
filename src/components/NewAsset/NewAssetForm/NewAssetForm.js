@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { enteredOnlyNumber, addComma, deleteComma } from "../../../common/number";
+
 import "./NewAssetForm.css";
 
 const NewAssetForm = (props) => {
@@ -15,7 +17,7 @@ const NewAssetForm = (props) => {
 
     const getDate = () => {
         return new Date().toISOString().substring(0, 10);
-    }
+    };
 
     const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value);
@@ -29,15 +31,15 @@ const NewAssetForm = (props) => {
     };
 
     const amountChangeHandler = (event) => {
-        const regex = /[^0-9]/g;
-        let isEnteredNotNumber = regex.test(event.target.value) ? true : false;
-        setIsWrongAmount(isEnteredNotNumber);
+        let isNotNumber = /[^0-9,]/g.test(event.target.value) ? true : false;
+        setIsWrongAmount(isNotNumber);
 
-        if (isEnteredNotNumber === true) {
+        if (isNotNumber) {
             return;
         }
 
-        setEnteredAmount(event.target.value);
+        let amount = addComma(enteredOnlyNumber(event.target.value));
+        setEnteredAmount(amount);
     };
 
     const amountTypeChangeHandler = (event) => {
@@ -103,7 +105,7 @@ const NewAssetForm = (props) => {
                             className="fs-tiny ft-alert"
                             style={{display: isWrongAmount ? 'inline-block' : 'none'}}
                         >
-                        10억 미만의 숫자만 입력할 수 있어요.
+                        10억 미만의 정수만 입력할 수 있어요.
                         </span>
                     </div>
 
@@ -112,7 +114,7 @@ const NewAssetForm = (props) => {
                         value={enteredAmount}
                         onChange={amountChangeHandler}
                         placeholder="금액을 입력해주세요."
-                        maxLength="9"
+                        maxLength="11"
                         required />
 
                     <div className="amount__type">
