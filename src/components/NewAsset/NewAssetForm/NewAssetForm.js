@@ -50,7 +50,7 @@ const NewAssetForm = (props) => {
         event.preventDefault(); // 페이지 리로드 방지
 
         const AssetData = {
-            date: enteredDate,
+            date: new Date(enteredDate),
             title: enteredTitle,
             amount: deleteComma(enteredAmount),
             amount_type: enteredAmountType
