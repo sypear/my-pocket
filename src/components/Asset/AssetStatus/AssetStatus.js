@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { addComma } from "../../../common/number";
+
 import "./AssetStatus.css";
 
 const AssetStatus = (props) => {
@@ -40,17 +42,17 @@ const AssetStatus = (props) => {
         <>
             <div className="title">
                 <h1 className="fs-normal fw-light">22년 자산 현황</h1>
-                <strong className="fs-title">250,000원</strong>
+                <strong className="fs-title">{addComma(totalAssets.toString())}원</strong>
             </div>
 
             <div className="detail">
                 <div className="detail-desc">
                     <span className="fs-normal fw-light">수입</span>
-                    <strong className="fs-emphasis fc-green">300,000원</strong>
+                    <strong className="fs-emphasis fc-green">{addComma(totalIncome.toString())}원</strong>
                 </div>
                 <div className="detail-desc">
                     <span className="fs-normal fw-light">지출</span>
-                    <strong className="fs-emphasis fc-red">50,000원</strong>
+                    <strong className="fs-emphasis fc-red">{addComma(totalExpense.toString())}원</strong>
                 </div>
             </div>
         </>
