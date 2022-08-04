@@ -21,7 +21,7 @@ const App = () => {
 	const deleteAssetDataHandler = (deleteData) => {
 		let copyAssets = assets;
 
-		copyAssets = copyAssets.filter(asset => asset.id != deleteData);
+		copyAssets = copyAssets.filter(asset => asset.id !== deleteData);
 
 		setAssets(copyAssets);
 	}
