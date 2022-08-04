@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import AssetDate from "./AssetDate/AssetDate";
+
 import "./AssetItem.css";
 
 const AssetItem = (props) => {
@@ -34,7 +36,7 @@ const AssetItem = (props) => {
     return (
         <div className={itemStyle} onClick={itemClickHandler}>
             <div>
-                <span className="fs-small fw-light">{props.date}</span>
+                <AssetDate date={props.date} />
                 <div className="item__title">
                     <div
                         className="fs-tiny btn-navy item__remove-btn"
