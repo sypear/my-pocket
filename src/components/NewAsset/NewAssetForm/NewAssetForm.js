@@ -31,7 +31,7 @@ const NewAssetForm = (props) => {
     };
 
     const amountChangeHandler = (event) => {
-        let isNotNumber = /[^0-9,]/g.test(event.target.value) ? true : false;
+        let isNotNumber = /^[^1-9][^0-9]{0,11}$/g.test(event.target.value) ? true : false;
         setIsWrongAmount(isNotNumber);
 
         if (isNotNumber) {
