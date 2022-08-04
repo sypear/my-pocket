@@ -21,6 +21,8 @@ const NewAsset = (props) => {
             id: props.latestAssetId
         };
 
+        setIsEditing(false);
+        
         props.onAddAssetData(assetData);
     };
 
