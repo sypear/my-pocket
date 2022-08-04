@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 
-import AssetStatus from "./AssetStatus/AssetStatus";
 import AssetList from "./AssetList/AssetList";
 
 import "./Asset.css";
@@ -18,7 +17,6 @@ const Asset = (props) => {
 
     return (
         <div className="asset">
-            <AssetStatus assets={props.assets} filteredAssets={filteredAssets} />
             <AssetList assets={props.assets} latestAssetId={props.latestAssetId} onRemoveAssetData={removeAssetDataHandler} onGetFilteredAssetsData={getFilteredAssetsDataHandler} assetsYear={props.assetsYear} />
         </div>
     );
