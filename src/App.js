@@ -18,10 +18,18 @@ const App = () => {
 		});
 	}
 
+	const deleteAssetDataHandler = (deleteData) => {
+		let copyAssets = assets;
+
+		copyAssets = copyAssets.filter(asset => asset.id != deleteData);
+
+		setAssets(copyAssets);
+	}
+
 	return (
 		<>
 			<NewAsset onAddAssetData={addAssetDataHandler} latestAssetId={latestAssetId} />
-			<Asset assets={assets} />
+			<Asset assets={assets} onDeleteAssetData={deleteAssetDataHandler} />
 		</>
 	);
 };
