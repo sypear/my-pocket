@@ -6,12 +6,12 @@ import AssetItems from "./AssetItems/AssetItems";
 import "./Asset.css";
 import AssetChart from "./AssetChart/AssetChart";
 
-const Asset = () => {
+const Asset = (props) => {
     return (
         <div className="asset">
-            <AssetStatus />
-            <AssetItems />
-            <AssetChart />
+            <AssetStatus assets={props.assets} />
+            <AssetItems assets={props.assets} />
+            <AssetChart assets={props.assets} />
         </div>
     );
 };
