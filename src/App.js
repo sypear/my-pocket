@@ -14,7 +14,7 @@ const App = () => {
 		setLatestAssetId(latestAssetId + 1);
 		
 		setAssets(prevAssets => {
-			return [assetData, ...prevAssets];
+			return [...prevAssets, assetData];
 		});
 	};
 
