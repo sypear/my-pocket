@@ -50,9 +50,11 @@ const NewAssetForm = (props) => {
         const AssetData = {
             date: enteredDate,
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: deleteComma(enteredAmount),
             amount_type: enteredAmountType
         };
+
+        props.onSaveAssetData(AssetData); // 부모 컴포넌트로 AssetData 전달
 
         // 입력창 초기화
         setEnteredDate("");
