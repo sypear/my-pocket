@@ -11,32 +11,24 @@ const AssetStatus = (props) => {
 
     useEffect(() => {
         if (props.assets.length > 0) {
-            setTotalAssets(calculateTotalHandler().assets);
-            setTotalIncome(calculateTotalHandler().income);
-            setTotalExpense(calculateTotalHandler().expense);
+            // 자산, 수입, 지출 합계 계산
+            let total = {assets: 0, income: 0, expense: 0};
+    
+            props.assets.forEach(item => {
+                if (item.amount_type === "income") {
+                    total.assets += +item.amount;
+                    total.income += +item.amount;
+                } else {
+                    total.assets -= +item.amount;
+                    total.expense += +item.amount;
+                }
+            });
+
+            setTotalAssets(total.assets);
+            setTotalIncome(total.income);
+            setTotalExpense(total.expense);
         }
     }, [props.assets]);
-
-    const calculateTotalHandler = () => {
-        // 자산, 수입, 지출 합계 계산
-        let total = {
-            assets: 0,
-            income: 0,
-            expense: 0
-        };
-
-        props.assets.map(item => {
-            if (item.amount_type === "income") {
-                total.assets += +item.amount;
-                total.income += +item.amount;
-            } else {
-                total.assets -= +item.amount;
-                total.expense += +item.amount;
-            }
-        });
-
-        return total;
-    };
 
     return (
         <>
