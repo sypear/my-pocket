@@ -1,0 +1,14 @@
+.list {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.list::before {
+    content: "";
+    position: absolute;
+    top: 35px;
+    width: 352px;
+    height: 0px;
+    opacity: 0.5;
+    border: 1px solid #DEDEDE;
+}
