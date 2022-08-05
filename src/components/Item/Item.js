@@ -4,8 +4,8 @@ import DateLabel from "../DateLabel/DateLabel";
 import "./Item.css";
 
 const Item = (props) => {
-    const [isClick, setIsClick] = useState(false);
-    const [clickCount, setClickCount] = useState(0);
+    const [isItemClick, setIsItemClick] = useState(false);
+    const [itemClickCount, setItemClickCount] = useState(0);
 
     const itemStyle = "item expense-item " + props.amountType;
     let fontStyle = "fs-emphasis fc-green";
@@ -17,16 +17,15 @@ const Item = (props) => {
     }
 
     const itemClickHandler = () => {
-        if (clickCount % 2 === 0) {
-            setIsClick(true);
+        if (itemClickCount % 2 === 0) {
+            setIsItemClick(true);
         } else {
-            setIsClick(false);
+            setIsItemClick(false);
         }
 
-        setClickCount(prevClickCount => prevClickCount+1);
+        setItemClickCount(prevClickCount => prevClickCount+1);
     }
 
-    const removeBtnClickHandler = (event) => {
     const removeButtonClickHandler = (event) => {
         event.stopPropagation(); // 이벤트 버블링 막기
 
@@ -40,8 +39,7 @@ const Item = (props) => {
                 <div className="item__title">
                     <div
                         className="fs-tiny btn-navy item__remove-btn"
-                        style={{display: isClick === true ? "flex" : "none"}}
-                        onClick={removeBtnClickHandler}>
+                        style={{display: isItemClick === true ? "flex" : "none"}}
                         onClick={removeButtonClickHandler}>
                         X
                     </div>
