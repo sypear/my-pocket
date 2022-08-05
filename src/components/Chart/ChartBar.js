@@ -29,15 +29,13 @@ const ChartBar = (props) => {
             <div className="chart-bar__inner">
                 <div
                     className="chart-bar__fill"
-                    style={{height: fillHeight, borderRadius: barStyle}}
-                    onMouseOver={showValueHandler}
-                    onMouseOut={hideValueHandler}>
+                    style={{height: fillHeight, borderRadius: fillBarStyle}}
+                    onMouseOver={showAmountHandler}
+                    onMouseOut={hideAmountHandler}
+                    aria-label={`${expenseYear}년 ${expenseMonth}월 지출 금액: ${expenseAmount}원`}>
                         {
-                            <div
-                                className="chart-bar__expense fs-tiny fw-bold"
-                                aria-label={`${expenseYear}년 ${expenseMonth}월 지출 금액: ${expenseAmount}원`}>
-                                {expenseAmount}
-                            </div>
+                            isShowAmount &&
+                            <div className="chart-bar__expense fs-tiny fw-bold">{expenseAmount}</div>
                         }
                 </div>
             </div>
