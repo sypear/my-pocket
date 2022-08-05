@@ -27,6 +27,7 @@ const Item = (props) => {
     }
 
     const removeBtnClickHandler = (event) => {
+    const removeButtonClickHandler = (event) => {
         event.stopPropagation(); // 이벤트 버블링 막기
 
         props.onRemoveAssetData(props.id);
@@ -41,6 +42,7 @@ const Item = (props) => {
                         className="fs-tiny btn-navy item__remove-btn"
                         style={{display: isClick === true ? "flex" : "none"}}
                         onClick={removeBtnClickHandler}>
+                        onClick={removeButtonClickHandler}>
                         X
                     </div>
                     <h3 className="fs-normal fw-regular">{props.title}</h3>
