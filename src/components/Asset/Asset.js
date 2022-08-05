@@ -17,7 +17,7 @@ const Asset = (props) => {
 
     return (
         <div className="asset">
-            <AssetList assets={props.assets} latestAssetId={props.latestAssetId} onRemoveAssetData={removeAssetDataHandler} onGetFilteredAssetsData={getFilteredAssetsDataHandler} assetsYear={props.assetsYear} />
+            <AssetList assets={props.assets} latestAssetId={props.latestAssetId} onRemoveAssetData={removeAssetDataHandler} onGetFilteredAssetsData={getFilteredAssetsDataHandler} assetsYear={props.assetsYear} isAddAsset={props.isAddAsset} />
         </div>
     );
 };

@@ -15,7 +15,7 @@ const AssetList = (props) => {
     let filteredExpenses = [];
 
     useEffect(() => {
-        if (props.assets.length > 0) {
+        if (props.isAddAsset) {
             let lastedAssetId = Math.max(...props.assets.map(asset => asset.id));
             let lastedAsset = props.assets.filter(asset => asset.id === lastedAssetId);
             year = lastedAsset[0].date.getFullYear().toString();

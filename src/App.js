@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 import NewAsset from "./components/NewAsset/NewAsset";
 import Asset from "./components/Asset/Asset";
 
-import "./components/UI/Font.css";
-import "./components/UI/Button.css";
+import "./styles/reset.css";
+import "./components/common/Font.css";
+import "./components/common/Button.css";
 
 const App = () => {
+	const [isAddAsset, setIsAddAsset] = useState(false);
 	const [latestAssetId, setLatestAssetId] = useState(0);
 	const [assets, setAssets] = useState([]);
 
@@ -16,7 +18,7 @@ const App = () => {
 
 		if (localAssets === null) {
 			localStorage.setItem("assets", JSON.stringify(assets));
-		localStorage.setItem("latestAssetId", latestAssetId);
+			localStorage.setItem("latestAssetId", latestAssetId);
 		} else {
 			let copyLocalAssets = [...localAssets];
 
@@ -36,6 +38,7 @@ const App = () => {
 
 	const addAssetDataHandler = (assetData) => {
 		setLatestAssetId(latestAssetId + 1);
+		setIsAddAsset(true);
 		
 		setAssets(prevAssets => {
 			return [...prevAssets, assetData];
@@ -43,8 +46,9 @@ const App = () => {
 	};
 
 	const deleteAssetDataHandler = (deleteData) => {
-		let copyAssets = [...assets];
+		setIsAddAsset(false);
 
+		let copyAssets = [...assets];
 		copyAssets = copyAssets.filter(asset => asset.id !== deleteData);
 
 		setAssets(copyAssets);
@@ -52,7 +56,7 @@ const App = () => {
 
 	return (
 		<>
-			<Asset assets={assets} latestAssetId={latestAssetId} onDeleteAssetData={deleteAssetDataHandler} />
+			<Asset assets={assets} latestAssetId={latestAssetId} onDeleteAssetData={deleteAssetDataHandler} isAddAsset={isAddAsset} />
 			<NewAsset latestAssetId={latestAssetId} onAddAssetData={addAssetDataHandler} />
 		</>
 	);
