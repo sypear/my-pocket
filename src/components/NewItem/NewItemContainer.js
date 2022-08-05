@@ -3,15 +3,20 @@ import React, { useState } from "react";
 import NewItemForm from "./NewItemForm";
 
 import "./NewItemContainer.css";
+import NewItem from "./NewItem";
 
 const NewItemContainer = (props) => {
     const [isEditing, setIsEditing] = useState(false);
 
-    const startEditingHandler = () => {
+    const startEditingHandler = (event) => {
+        event.stopPropagation();
+
         setIsEditing(true);
     };
 
-    const stopEditingHandler = () => {
+    const stopEditingHandler = (event) => {
+        event.stopPropagation();
+
         setIsEditing(false);
     };
 
@@ -26,20 +31,8 @@ const NewItemContainer = (props) => {
     };
 
     return (
-        <div className="new-asset" style={{textAlign: !isEditing ? 'center' : 'left', cursor: !isEditing ? 'pointer' : 'auto'}}>
-            {
-                !isEditing &&
-                <div className="fs-normal fw-bold new-asset__create-btn" onClick={startEditingHandler}>
-                    내역 추가하기
-                </div>
-            }
-            {
-                isEditing &&
-                <div className="new-asset__create">
-                    <h1 className="fs-normal">내역 추가</h1>
-                    <NewItemForm onAddItem={addItemHandler} onCancelAddItem={stopEditingHandler} />
-                </div>
-            }
+        <div className="new-item-container" style={{textAlign: !isEditing ? 'center' : 'left', cursor: !isEditing ? 'pointer' : 'auto'}} onClick={startEditingHandler}>
+            <NewItem isEditing={isEditing} onAddItem={addItemHandler} onCancelAddItem={stopEditingHandler} />
         </div>
     );
 };
