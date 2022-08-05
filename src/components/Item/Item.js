@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { addComma } from "../../utils/numberUtils.js";
 import DateLabel from "../DateLabel/DateLabel";
-import "./PocketItem.css";
+import "./Item.css";
 
-const PocketItem = (props) => {
+const Item = (props) => {
     const [isClick, setIsClick] = useState(false);
     const [clickCount, setClickCount] = useState(0);
 
@@ -53,4 +53,4 @@ const PocketItem = (props) => {
     );
 };
 
-export default PocketItem;
+export default Item;
