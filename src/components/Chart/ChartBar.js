@@ -8,7 +8,6 @@ const ChartBar = (props) => {
     const expenseYear = props.year;
     const expenseMonth = props.month;
     const expenseAmount = addComma(props.amount.toString());
-    console.log(props.amount);
 
     let fillHeight = "0%";
 
