@@ -15,15 +15,14 @@ const NewItemContainer = (props) => {
         setIsEditing(false);
     };
 
-    const saveAssetDataHandler = (enteredAssetData) => {
-        const assetData = {
-            ...enteredAssetData,
-            id: props.latestAssetId
+    const addItemHandler = (enteredData) => {
+        const enteredItem = {
+            ...enteredData,
+            id: props.nextItemId
         };
+        props.onAddItem(enteredItem);
 
         setIsEditing(false);
-        
-        props.onAddAssetData(assetData);
     };
 
     return (
@@ -38,7 +37,7 @@ const NewItemContainer = (props) => {
                 isEditing &&
                 <div className="new-asset__create">
                     <h1 className="fs-normal">내역 추가</h1>
-                    <NewItemForm onSaveAssetData={saveAssetDataHandler} onCancle={stopEditingHandler} />
+                    <NewItemForm onAddItem={addItemHandler} onCancelAddItem={stopEditingHandler} />
                 </div>
             }
         </div>

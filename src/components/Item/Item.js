@@ -29,7 +29,7 @@ const Item = (props) => {
     const removeButtonClickHandler = (event) => {
         event.stopPropagation(); // 이벤트 버블링 막기
 
-        props.onRemoveAssetData(props.id);
+        props.onDeleteItem(props.id);
     }
 
     return (

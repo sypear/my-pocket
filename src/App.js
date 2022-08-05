@@ -6,56 +6,56 @@ import "./components/UI/Font.css";
 import "./components/UI/Button.css";
 
 const App = () => {
-	const [isAddAsset, setIsAddAsset] = useState(false);
-	const [latestAssetId, setLatestAssetId] = useState(0);
-	const [assets, setAssets] = useState([]);
+	const [isAddItem, setIsAddItem] = useState(false);
+	const [nextItemId, setNextItemId] = useState(0);
+	const [items, setItems] = useState([]);
 
 	useEffect(() => {
-		const localAssets = JSON.parse(localStorage.getItem("assets"));
-		const localLatestAssetId = +localStorage.getItem("latestAssetId");
+		const localItems = JSON.parse(localStorage.getItem("items"));
+		const localNextItemId = +localStorage.getItem("nextItemId");
 
-		if (localAssets === null) {
-			localStorage.setItem("assets", JSON.stringify(assets));
-			localStorage.setItem("latestAssetId", latestAssetId);
+		if (localItems === null) {
+			localStorage.setItem("items", JSON.stringify(items));
+			localStorage.setItem("nextItemId", nextItemId);
 		} else {
-			let copyLocalAssets = [...localAssets];
+			let copyLocalItems = [...localItems];
 
-			copyLocalAssets.forEach((element, i) => {
-				copyLocalAssets[i].date = new Date(element.date)
+			copyLocalItems.forEach((element, i) => {
+				copyLocalItems[i].date = new Date(element.date)
 			});
 
-			setAssets(copyLocalAssets);
-			setLatestAssetId(localLatestAssetId);
+			setItems(copyLocalItems);
+			setNextItemId(localNextItemId);
 		}
 	}, []);
 
 	useEffect(() => {
-		localStorage.setItem("assets", JSON.stringify(assets));
-		localStorage.setItem("latestAssetId", latestAssetId);
-	}, [assets]);
+		localStorage.setItem("items", JSON.stringify(items));
+		localStorage.setItem("nextItemId", nextItemId);
+	}, [items]);
 
-	const addAssetDataHandler = (assetData) => {
-		setLatestAssetId(latestAssetId + 1);
-		setIsAddAsset(true);
+	const addItemHandler = (addItemData) => {
+		setNextItemId(nextItemId + 1);
+		setIsAddItem(true);
 		
-		setAssets(prevAssets => {
-			return [...prevAssets, assetData];
+		setItems(prevItems => {
+			return [...prevItems, addItemData];
 		});
 	};
 
-	const deleteAssetDataHandler = (deleteData) => {
-		setIsAddAsset(false);
+	const deleteItemHandler = (deleteItemData) => {
+		setIsAddItem(false);
 
-		let copyAssets = [...assets];
-		copyAssets = copyAssets.filter(asset => asset.id !== deleteData);
+		let copyItems = [...items];
+		copyItems = copyItems.filter(item => item.id !== deleteItemData);
 
-		setAssets(copyAssets);
+		setItems(copyItems);
 	};
 
 	return (
 		<>
-			<PocketContainer assets={assets} latestAssetId={latestAssetId} onDeleteAssetData={deleteAssetDataHandler} isAddAsset={isAddAsset} />
-			<NewItemContainer latestAssetId={latestAssetId} onAddAssetData={addAssetDataHandler} />
+			<PocketContainer items={items} onDeleteItem={deleteItemHandler} isAddItem={isAddItem} />
+			<NewItemContainer nextItemId={nextItemId} onAddItem={addItemHandler} />
 		</>
 	);
 };

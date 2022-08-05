@@ -3,37 +3,37 @@ import { addComma } from "../../utils/numberUtils";
 import "./PocketStatus.css";
 
 const PocketStatus = (props) => {
-    const [totalAssets, setTotalAssets] = useState(0);
+    const [totalBalance, setTotalBalance] = useState(0);
     const [totalIncome, setTotalIncome] = useState(0);
     const [totalExpense, setTotalExpense] = useState(0);
     const twoDigitYear = props.filteredYear.slice(-2);
 
     useEffect(() => {
-        let total = {assets: 0, income: 0, expense: 0};
+        let total = {balance: 0, income: 0, expense: 0};
 
-        if (props.assets.length > 0) {
+        if (props.filteredItems.length > 0) {
             // 자산, 수입, 지출 합계 계산
-            props.assets.forEach(item => {
+            props.filteredItems.forEach(item => {
                 if (item.amount_type === "income") {
-                    total.assets += +item.amount;
+                    total.balance += +item.amount;
                     total.income += +item.amount;
                 } else {
-                    total.assets -= +item.amount;
+                    total.balance -= +item.amount;
                     total.expense += +item.amount;
                 }
             });
         }
 
-        setTotalAssets(total.assets);
+        setTotalBalance(total.balance);
         setTotalIncome(total.income);
         setTotalExpense(total.expense);
-    }, [props.assets]);
+    }, [props.filteredItems]);
 
     return (
         <div className="pocket__status">
             <div className="pocket__status-title">
                 <h1 className="fs-normal fw-light">{twoDigitYear}년 자산 현황</h1>
-                <strong className="fs-title">{addComma(totalAssets.toString())}원</strong>
+                <strong className="fs-title">{addComma(totalBalance.toString())}원</strong>
             </div>
 
             <div className="pocket__status-detail">

@@ -49,14 +49,14 @@ const NewItemForm = (props) => {
     const submitHandler = (event) => {
         event.preventDefault(); // 페이지 리로드 방지
 
-        const AssetData = {
+        const enteredData = {
             date: new Date(enteredDate),
             title: enteredTitle,
             amount: deleteComma(enteredAmount),
             amount_type: enteredAmountType
         };
 
-        props.onSaveAssetData(AssetData); // 부모 컴포넌트로 AssetData 전달
+        props.onAddItem(enteredData); // 부모 컴포넌트로 enteredData 전달
 
         // 입력창 초기화
         setEnteredDate("");

@@ -13,35 +13,33 @@ const Pocket = (props) => {
     let filteredExpenses = [];
 
     useEffect(() => {
-        if (props.isAddAsset) {
-            let lastedAssetId = Math.max(...props.assets.map(asset => asset.id));
-            let lastedAsset = props.assets.filter(asset => asset.id === lastedAssetId);
-            year = lastedAsset[0].date.getFullYear().toString();
-            setfilteredYear(year);
+        if (props.isAddItem) {
+            let lastedItemId = Math.max(...props.items.map(item => item.id));
+            let lastedItem = props.items.filter(item => item.id === lastedItemId);
+            let lastedFilterBaseYear = lastedItem[0].date.getFullYear().toString();
+            setFilterBaseYear(lastedFilterBaseYear);
         }
-    }, [props.assets]);
+    }, [props.items]);
 
-    if (props.assets.length > 0) {
-        filteredAssets = props.assets.filter(asset => asset.date.getFullYear().toString() === filteredYear);
-        filteredExpenses = filteredAssets.filter(asset => asset.amount_type === "expense");
-
-        props.onGetFilteredAssetsData(filteredAssets);
+    if (props.items.length > 0) {
+        filteredItems = props.items.filter(item => item.date.getFullYear().toString() === filterBaseYear);
+        filteredExpenses = filteredItems.filter(item => item.amount_type === "expense");
     }
 
     const filterChangeHandler = (selectedYear) => {
-        setfilteredYear(selectedYear);
+        setFilterBaseYear(selectedYear);
     };
 
-    const removeAssetDataHandler = (selectedAssetDataId) => {
-        props.onRemoveAssetData(selectedAssetDataId);
+    const deleteItemHandler = (selectedItemId) => {
+        props.onDeleteItem(selectedItemId);
     };
 
     return (
         <div className="list">
-            <PocketStatus assets={filteredAssets} filteredYear={filteredYear} />
-            <PocketFilter onChangeFilter={filterChangeHandler} filteredYear={filteredYear} assetsYear={props.assetsYear} />
-            <PocketItemList assets={filteredAssets} onRemoveAssetData={removeAssetDataHandler} />
-            <PocketChart assets={filteredExpenses} filteredYear={filteredYear} />
+            <PocketStatus filteredItems={filteredItems} filterBaseYear={filterBaseYear} />
+            <PocketFilter onChangeFilter={filterChangeHandler} filterBaseYear={filterBaseYear} />
+            <PocketItemList filteredItems={filteredItems} onDeleteItem={deleteItemHandler} />
+            <PocketChart filteredExpenses={filteredExpenses} filterBaseYear={filterBaseYear} />
         </div>
     );
 };

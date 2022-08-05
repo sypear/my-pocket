@@ -18,10 +18,10 @@ const PocketChart = (props) => {
         { month: '12', amount: 0 }
     ];
 
-    props.assets.forEach(asset => {
-        const month = asset.date.getMonth();
+    props.filteredExpenses.forEach(expense => {
+        const month = expense.date.getMonth();
 
-        monthExpenseData[month].amount += +asset.amount;
+        monthExpenseData[month].amount += +expense.amount;
     });
 
     return (
