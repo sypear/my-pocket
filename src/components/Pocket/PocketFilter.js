@@ -10,7 +10,9 @@ const PocketFilter = (props) => {
     return (
         <div className="pocket__filter">
             <h2 className="fs-normal">연간 내역</h2>
-            <Filter filteredYear={props.filteredYear} onChangeFilter={filterChangeHandler} />
+            <Filter
+                filterBaseYear={props.filterBaseYear}
+                onChangeFilter={filterChangeHandler} />
         </div>
     );
 };

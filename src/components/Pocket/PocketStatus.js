@@ -6,7 +6,7 @@ const PocketStatus = (props) => {
     const [totalBalance, setTotalBalance] = useState(0);
     const [totalIncome, setTotalIncome] = useState(0);
     const [totalExpense, setTotalExpense] = useState(0);
-    const twoDigitYear = props.filteredYear.slice(-2);
+    const twoDigitYear = props.filterBaseYear.slice(-2);
 
     useEffect(() => {
         let total = {balance: 0, income: 0, expense: 0};

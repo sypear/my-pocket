@@ -29,7 +29,7 @@ const PocketChart = (props) => {
             <h2 className="fs-normal">월 별 지출 차트</h2>
             <Chart
                 expenses={monthExpenseData}
-                filteredYear={props.filteredYear}
+                filterBaseYear={props.filterBaseYear}
             />
         </div>
     );

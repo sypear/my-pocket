@@ -26,7 +26,7 @@ const Item = (props) => {
         setItemClickCount(prevClickCount => prevClickCount+1);
     }
 
-    const removeButtonClickHandler = (event) => {
+    const deleteButtonClickHandler = (event) => {
         event.stopPropagation(); // 이벤트 버블링 막기
 
         props.onDeleteItem(props.id);
@@ -40,7 +40,7 @@ const Item = (props) => {
                     <div
                         className="fs-tiny btn-navy item__remove-btn"
                         style={{display: isItemClick === true ? "flex" : "none"}}
-                        onClick={removeButtonClickHandler}>
+                        onClick={deleteButtonClickHandler}>
                         X
                     </div>
                     <h3 className="fs-normal fw-regular">{props.title}</h3>

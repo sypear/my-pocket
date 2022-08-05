@@ -11,8 +11,8 @@ const Chart = (props) => {
             {
                 props.expenses.map((expense) => (
                     <ChartBar
-                        key={expense.label}
-                        year={props.filteredYear}
+                        key={expense.month}
+                        year={props.filterBaseYear}
                         month={expense.month}
                         amount={expense.amount}
                         maxAmount={maxAmount}

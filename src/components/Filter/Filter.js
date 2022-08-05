@@ -11,7 +11,7 @@ const Filter = (props) => {
             className="fw-light filter"
             id="filter"
             name="filter"
-            value={props.filteredYear}
+            value={props.filterBaseYear}
             onChange={filterChangeHandler}>
             <option value="2022">2022</option>
             <option value="2021">2021</option>

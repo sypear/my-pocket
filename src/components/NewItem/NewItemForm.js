@@ -145,7 +145,7 @@ const NewItemForm = (props) => {
 
                 <div className="new-asset__actions">
                     <button type="submit" className="btn-purple">등록</button>
-                    <button type="button" className="btn-white" onClick={props.onCancle}>취소</button>
+                    <button type="button" className="btn-white" onClick={props.onCancelAddItem}>취소</button>
                 </div>
             </div>
         </form>

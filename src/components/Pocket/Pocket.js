@@ -6,10 +6,9 @@ import PocketChart from "./PocketChart";
 import "./Pocket.css";
 
 const Pocket = (props) => {
-    let year = new Date().getFullYear().toString();
-
-    const [filteredYear, setfilteredYear] = useState(year);
-    let filteredAssets = [];
+    const initialFilterBaseYear = new Date().getFullYear().toString();
+    const [filterBaseYear, setFilterBaseYear] = useState(initialFilterBaseYear);
+    let filteredItems = [];
     let filteredExpenses = [];
 
     useEffect(() => {
