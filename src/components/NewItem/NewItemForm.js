@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import { enteredOnlyNumber, addComma, deleteComma } from "../../../common/number";
+import { enteredOnlyNumber, addComma, deleteComma } from "../../utils/numberUtils.js";
 
-import "./NewAssetForm.css";
+import "./NewItemForm.css";
 
-const NewAssetForm = (props) => {
+const NewItemForm = (props) => {
     const TITLE_SIZE = 35;
 
     const [enteredDate, setEnteredDate] = useState("");
@@ -152,4 +152,4 @@ const NewAssetForm = (props) => {
     );
 };
 
-export default NewAssetForm;
+export default NewItemForm;

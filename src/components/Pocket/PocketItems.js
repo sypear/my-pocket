@@ -1,10 +1,8 @@
 import React from "react";
+import PocketItem from "./PocketItem";
+import "./PocketItems.css";
 
-import AssetItem from "./AssetItem/AssetItem";
-
-import "./AssetItems.css";
-
-const AssetItems = (props) => {
+const PocketItems = (props) => {
     if (props.assets.length === 0) {
         return (
             <div className="items">
@@ -32,7 +30,7 @@ const AssetItems = (props) => {
         <div className="items">
             {
                 assetsSortedByDate.map(asset => (
-                    <AssetItem
+                    <PocketItem
                         key={asset.id}
                         id={asset.id}
                         date={asset.date}
@@ -47,4 +45,4 @@ const AssetItems = (props) => {
     );
 };
 
-export default AssetItems;
+export default PocketItems;

@@ -1,0 +1,17 @@
+.pocket__filter {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 37px;
+}
+
+.pocket__filter::before {
+    content: "";
+    position: absolute;
+    top: 35px;
+    width: 352px;
+    height: 0px;
+    opacity: 0.5;
+    border: 1px solid #DEDEDE;
+}

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
+import { addComma } from "../../utils/numberUtils.js";
+import DateLabel from "../DateLabel/DateLabel";
+import "./PocketItem.css";
 
-import AssetDate from "./AssetDate/AssetDate";
-
-import { addComma } from "../../../../../common/number";
-
-import "./AssetItem.css";
-
-const AssetItem = (props) => {
+const PocketItem = (props) => {
     const [isClick, setIsClick] = useState(false);
     const [clickCount, setClickCount] = useState(0);
 
@@ -38,7 +35,7 @@ const AssetItem = (props) => {
     return (
         <div className={itemStyle} onClick={itemClickHandler}>
             <div>
-                <AssetDate date={props.date} />
+                <DateLabel date={props.date} />
                 <div className="item__title">
                     <div
                         className="fs-tiny btn-navy item__remove-btn"
@@ -56,4 +53,4 @@ const AssetItem = (props) => {
     );
 };
 
-export default AssetItem;
+export default PocketItem;

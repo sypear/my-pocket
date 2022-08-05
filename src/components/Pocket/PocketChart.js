@@ -1,9 +1,8 @@
 import React from "react";
+import Chart from "../Chart/Chart";
+import "./PocketChart.css";
 
-import "./AssetChart.css";
-import AssetChartBars from "./AssetChartBars/AssetChartBars";
-
-const AssetChart = (props) => {
+const PocketChart = (props) => {
     const monthExpenseData = [
         { label: '1월', value: 0 },
         { label: '2월', value: 0 },
@@ -28,9 +27,12 @@ const AssetChart = (props) => {
     return (
         <div className="chart">
             <h2 className="fs-normal">월 별 지출 차트</h2>
-            <AssetChartBars expenses={monthExpenseData} />
+            <Chart
+                expenses={monthExpenseData}
+                filteredYear={props.filteredYear}
+            />
         </div>
     );
 };
 
-export default AssetChart;
+export default PocketChart;

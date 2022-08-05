@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { addComma } from "../../utils/numberUtils";
+import "./PocketStatus.css";
 
-import { addComma } from "../../../../common/number";
-
-import "./AssetStatus.css";
-
-const AssetStatus = (props) => {
+const PocketStatus = (props) => {
     const [totalAssets, setTotalAssets] = useState(0);
     const [totalIncome, setTotalIncome] = useState(0);
     const [totalExpense, setTotalExpense] = useState(0);
@@ -52,4 +50,4 @@ const AssetStatus = (props) => {
     );
 };
 
-export default AssetStatus;
+export default PocketStatus;

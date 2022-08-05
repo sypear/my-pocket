@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import NewAssetForm from "./NewAssetForm/NewAssetForm";
+import NewItemForm from "./NewItemForm";
 
-import "./NewAsset.css";
+import "./NewItemContainer.css";
 
-const NewAsset = (props) => {
+const NewItemContainer = (props) => {
     const [isEditing, setIsEditing] = useState(false);
 
     const startEditingHandler = () => {
@@ -38,11 +38,11 @@ const NewAsset = (props) => {
                 isEditing &&
                 <div className="new-asset__create">
                     <h1 className="fs-normal">내역 추가</h1>
-                    <NewAssetForm onSaveAssetData={saveAssetDataHandler} onCancle={stopEditingHandler} />
+                    <NewItemForm onSaveAssetData={saveAssetDataHandler} onCancle={stopEditingHandler} />
                 </div>
             }
         </div>
     );
 };
 
-export default NewAsset;
+export default NewItemContainer;

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-
-import NewAsset from "./components/NewAsset/NewAsset";
-import Asset from "./components/Asset/Asset";
-
+import NewItemContainer from "./components/NewItem/NewItemContainer";
+import PocketContainer from "./components/Pocket/PocketContainer";
 import "./styles/reset.css";
-import "./components/common/Font.css";
-import "./components/common/Button.css";
+import "./components/UI/Font.css";
+import "./components/UI/Button.css";
 
 const App = () => {
 	const [isAddAsset, setIsAddAsset] = useState(false);
@@ -56,8 +54,8 @@ const App = () => {
 
 	return (
 		<>
-			<Asset assets={assets} latestAssetId={latestAssetId} onDeleteAssetData={deleteAssetDataHandler} isAddAsset={isAddAsset} />
-			<NewAsset latestAssetId={latestAssetId} onAddAssetData={addAssetDataHandler} />
+			<PocketContainer assets={assets} latestAssetId={latestAssetId} onDeleteAssetData={deleteAssetDataHandler} isAddAsset={isAddAsset} />
+			<NewItemContainer latestAssetId={latestAssetId} onAddAssetData={addAssetDataHandler} />
 		</>
 	);
 };
