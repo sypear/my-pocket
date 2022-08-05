@@ -4,28 +4,28 @@ import "./PocketChart.css";
 
 const PocketChart = (props) => {
     const monthExpenseData = [
-        { label: '1월', value: 0 },
-        { label: '2월', value: 0 },
-        { label: '3월', value: 0 },
-        { label: '4월', value: 0 },
-        { label: '5월', value: 0 },
-        { label: '6월', value: 0 },
-        { label: '7월', value: 0 },
-        { label: '8월', value: 0 },
-        { label: '9월', value: 0 },
-        { label: '10월', value: 0 },
-        { label: '11월', value: 0 },
-        { label: '12월', value: 0 }
+        { month: '1', amount: 0 },
+        { month: '2', amount: 0 },
+        { month: '3', amount: 0 },
+        { month: '4', amount: 0 },
+        { month: '5', amount: 0 },
+        { month: '6', amount: 0 },
+        { month: '7', amount: 0 },
+        { month: '8', amount: 0 },
+        { month: '9', amount: 0 },
+        { month: '10', amount: 0 },
+        { month: '11', amount: 0 },
+        { month: '12', amount: 0 }
     ];
 
     props.assets.forEach(asset => {
         const month = asset.date.getMonth();
 
-        monthExpenseData[month].value += +asset.amount;
+        monthExpenseData[month].amount += +asset.amount;
     });
 
     return (
-        <div className="chart">
+        <div className="pocket-chart">
             <h2 className="fs-normal">월 별 지출 차트</h2>
             <Chart
                 expenses={monthExpenseData}

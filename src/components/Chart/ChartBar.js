@@ -3,24 +3,25 @@ import { addComma } from "../../utils/numberUtils.js";
 import "./ChartBar.css";
 
 const ChartBar = (props) => {
-    const [isShowValue, setIsShowValue] = useState(false);
-    const barStyle = props.value === props.maxValue ? "5px" : "";
-    const expenseYear = props.filteredYear;
-    const expenseMonth = props.label;
-    const expenseAmount = addComma(props.value.toString());
+    const [isShowAmount, setIsShowAmount] = useState(false);
+    const fillBarStyle = props.amount === props.maxAmount ? "5px" : "";
+    const expenseYear = props.year;
+    const expenseMonth = props.month;
+    const expenseAmount = addComma(props.amount.toString());
+    console.log(props.amount);
 
     let fillHeight = "0%";
 
-    if (props.maxValue > 0) {
-        fillHeight = Math.round((props.value / props.maxValue) * 100) + "%";
+    if (props.maxAmount > 0) {
+        fillHeight = Math.round((props.amount / props.maxAmount) * 100) + "%";
     }
 
-    const showValueHandler = () => {
-        setIsShowValue(true);
+    const showAmountHandler = () => {
+        setIsShowAmount(true);
     }
     
-    const hideValueHandler = () => {
-        setIsShowValue(false);
+    const hideAmountHandler = () => {
+        setIsShowAmount(false);
     }
 
     return (
@@ -41,7 +42,7 @@ const ChartBar = (props) => {
                 </div>
             </div>
             <strong className="fs-tiny fw-light">
-                {expenseMonth}
+                {expenseMonth + "월"}
             </strong>
         </div>
     );
