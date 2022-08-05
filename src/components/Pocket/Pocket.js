@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PocketStatus from "./PocketStatus";
 import PocketFilter from "./PocketFilter";
-import PocketItems from "./PocketItems";
+import PocketItemList from "./PocketItemList";
 import PocketChart from "./PocketChart";
 import "./Pocket.css";
 
@@ -40,7 +40,7 @@ const Pocket = (props) => {
         <div className="list">
             <PocketStatus assets={filteredAssets} filteredYear={filteredYear} />
             <PocketFilter onChangeFilter={filterChangeHandler} filteredYear={filteredYear} assetsYear={props.assetsYear} />
-            <PocketItems assets={filteredAssets} onRemoveAssetData={removeAssetDataHandler} />
+            <PocketItemList assets={filteredAssets} onRemoveAssetData={removeAssetDataHandler} />
             <PocketChart assets={filteredExpenses} filteredYear={filteredYear} />
         </div>
     );
