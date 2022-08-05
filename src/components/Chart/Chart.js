@@ -1,10 +1,10 @@
 import React from "react";
 
-import AssetChartBar from "./AssetChartBar/AssetChartBar";
+import ChartBar from "./ChartBar";
 
-import "./AssetChartBars.css";
+import "./Chart.css";
 
-const AssetChartBars = (props) => {
+const Chart = (props) => {
     const expensesValues = props.expenses.map(expense => expense.value);
     const maxValue = Math.max(...expensesValues);
 
@@ -12,8 +12,9 @@ const AssetChartBars = (props) => {
         <div className="chart-bars">
             {
                 props.expenses.map((expense) => (
-                    <AssetChartBar
+                    <ChartBar
                         key={expense.label}
+                        year={expense.filteredYear}
                         label={expense.label}
                         value={expense.value}
                         maxValue={maxValue}
@@ -24,4 +25,4 @@ const AssetChartBars = (props) => {
     );
 };
 
-export default AssetChartBars;
+export default Chart;

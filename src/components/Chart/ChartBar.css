@@ -1,4 +1,4 @@
-.chart-bar__item {
+.chart-bar {
     display: flex;
     flex-flow: column;
     justify-content: center;

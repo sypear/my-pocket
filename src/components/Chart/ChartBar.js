@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { addComma } from "../../utils/numberUtils.js";
+import "./ChartBar.css";
 
-import { addComma } from "../../../../../../common/number";
-
-import "./AssetChartBar.css";
-
-const AssetChartBar = (props) => {
+const ChartBar = (props) => {
     const [isShowValue, setIsShowValue] = useState(false);
     const barStyle = props.value === props.maxValue ? "5px" : "";
+    const expenseYear = props.filteredYear;
+    const expenseMonth = props.label;
+    const expenseAmount = addComma(props.value.toString());
 
     let fillHeight = "0%";
 
@@ -23,7 +24,7 @@ const AssetChartBar = (props) => {
     }
 
     return (
-        <div className="chart-bar__item">
+        <div className="chart-bar">
             <div className="chart-bar__inner">
                 <div
                     className="chart-bar__fill"
@@ -31,18 +32,19 @@ const AssetChartBar = (props) => {
                     onMouseOver={showValueHandler}
                     onMouseOut={hideValueHandler}>
                         {
-                            isShowValue && 
-                            <div className="chart-bar__expense fs-tiny fw-bold">
-                                {addComma(props.value.toString())}
+                            <div
+                                className="chart-bar__expense fs-tiny fw-bold"
+                                aria-label={`${expenseYear}년 ${expenseMonth}월 지출 금액: ${expenseAmount}원`}>
+                                {expenseAmount}
                             </div>
                         }
                 </div>
             </div>
             <strong className="fs-tiny fw-light">
-                {props.label}
+                {expenseMonth}
             </strong>
         </div>
     );
 };
 
-export default AssetChartBar;
+export default ChartBar;

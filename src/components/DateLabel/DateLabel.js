@@ -1,6 +1,6 @@
 import React from "react";
 
-const AssetDate = (props) => {
+const DateLabel = (props) => {
     const year = props.date.getFullYear();
     const month = ("00" + (props.date.getMonth() + 1)).slice(-2);
     const day = ("00" + props.date.getDate()).slice(-2);
@@ -12,4 +12,4 @@ const AssetDate = (props) => {
     );
 }
 
-export default AssetDate;
+export default DateLabel;
