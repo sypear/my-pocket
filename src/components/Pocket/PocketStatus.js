@@ -30,23 +30,22 @@ const PocketStatus = (props) => {
     }, [props.assets]);
 
     return (
-        <>
-            <div className="title">
-                <h1 className="fs-normal fw-light">{year}년 자산 현황</h1>
+        <div className="pocket__status">
+            <div className="pocket__status-title">
                 <strong className="fs-title">{addComma(totalAssets.toString())}원</strong>
             </div>
 
-            <div className="detail">
-                <div className="detail-desc">
+            <div className="pocket__status-detail">
+                <div className="pocket__status-detail--desc">
                     <span className="fs-normal fw-light">수입</span>
                     <strong className="fs-emphasis fc-green">{addComma(totalIncome.toString())}원</strong>
                 </div>
-                <div className="detail-desc">
+                <div className="pocket__status-detail--desc">
                     <span className="fs-normal fw-light">지출</span>
                     <strong className="fs-emphasis fc-red">{addComma(totalExpense.toString())}원</strong>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
