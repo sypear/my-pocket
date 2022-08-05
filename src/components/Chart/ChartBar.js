@@ -40,7 +40,7 @@ const ChartBar = (props) => {
                 </div>
             </div>
             <strong className="fs-tiny fw-light">
-                {expenseMonth + "월"}
+                {expenseMonth}월
             </strong>
         </div>
     );

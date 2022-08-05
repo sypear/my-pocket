@@ -6,7 +6,9 @@ const PocketItemList = (props) => {
     if (props.filteredItems.length === 0) {
         return (
             <div className="pocket__item-list">
-                <span className="fw-light fs-normal" style={{display: "block", textAlign: "center"}}>입력된 데이터가 없어요 🙅</span>
+                <span className="fw-light fs-normal" style={{display: "block", textAlign: "center"}}>
+                    입력된 데이터가 없어요 🙅
+                </span>
             </div>
         );
     }
