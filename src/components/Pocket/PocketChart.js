@@ -25,7 +25,7 @@ const PocketChart = (props) => {
     });
 
     return (
-        <div className="pocket-chart">
+        <div className="pocket__chart">
             <h2 className="fs-normal">월 별 지출 차트</h2>
             <Chart
                 expenses={monthExpenseData}

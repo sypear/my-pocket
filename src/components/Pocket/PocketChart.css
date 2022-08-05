@@ -1,12 +1,12 @@
-.pocket-chart {
+.pocket__chart {
     position: relative;
 }
 
-.pocket-chart h2 {
+.pocket__chart h2 {
     margin-bottom: 32px;
 }
 
-.pocket-chart::before {
+.pocket__chart::before {
     content: "";
     position: absolute;
     top: 30px;
