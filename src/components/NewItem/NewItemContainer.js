@@ -26,7 +26,7 @@ const NewItemContainer = (props) => {
     };
 
     return (
-        <div className="new-item__container" style={{textAlign: !isEditing ? 'center' : 'left', cursor: !isEditing ? 'pointer' : 'auto'}}>
+        <div className="new-item__container" style={{cursor: !isEditing ? 'pointer' : 'auto'}}>
             {
                 !isEditing &&
                 <div className="fs-normal fw-bold add-new-item-button" onClick={startEditingHandler}>
