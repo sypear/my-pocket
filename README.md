@@ -146,9 +146,7 @@ console.log()로 찍어보면 멀쩡하게 잘 찍혔는데, state를 업데이�
 <br/>
 
 #### - 오류 해결하기
-<a href="https://stackoverflow.com/questions/59112809/react-usestate-hook-causing-infinite-loop">React UseState hook causing infinite loop</a> 글을 참고하여<br/>
-`props` 변경 사항이 있는 경우에만 상태를 업데이트 하는 방식으로 코드를 수정했습니다.<br/><br/>
-
+<a href="https://stackoverflow.com/questions/59112809/react-usestate-hook-causing-infinite-loop">React UseState hook causing infinite loop</a> 글을 참고하여 `props` 변경 사항이 있는 경우에만 상태를 업데이트 하는 방식으로 코드를 수정했습니다.<br/>
 ```javascript
 import React, { useEffect, useState } from "react";
 import { addComma } from "../../utils/numberUtils";
@@ -194,9 +192,8 @@ useEffect를 이용해서 props.filteredItems이 변할 때만 상태를 업데�
 <br/>
 
 ## 🌈 느낀 점
-### 먼저 생각한 후 기능 구현을 시작하자
-이번 프로젝트를 진행하면서 컴포넌트 구조를 제대로 생각하지 않고 바로 기능 구현에 들어갔는데요,<br/>
-이런 점 때문에 시간을 많이 허비했습니다..<br/><br/>
+### 생각을 먼저 한 후 기능을 구현하자
+이번 프로젝트를 진행하면서 컴포넌트 구조를 제대로 생각하지 않고 바로 기능 구현에 들어갔는데요, 이런 점 때문에 시간을 많이 허비했습니다..<br/><br/>
 
 #### 첫 번째 삽질
 ![cat-typing-furiously](https://user-images.githubusercontent.com/105365737/183237003-52078e09-75bd-4173-bbd4-5042b44310ba.gif)
@@ -210,7 +207,7 @@ useEffect를 이용해서 props.filteredItems이 변할 때만 상태를 업데�
 대략적으로 큰 그림을 그리고 시작하지 않고 바로 구현에 들어가서 컴포넌트를 분리했다가 다시 합쳤다가 또 분리했다가 하는.. 굳이 하지 않아도 될 시간 낭비(삽질)를 아주 많이 했습니다.<br/><br/>
 
 다음 프로젝트를 진행할 때에는 이번처럼 바로 코드를 짜기보다는<br/>
-대략적으로 큰 그림을 그린 후 기능 구현을 해야겠다는 교훈을 얻었습니다.<br/>
+대략적으로 큰 그림을 그린 후 기능 구현을 해야겠다는 교훈을 얻었습니다.<br/><br/>
 
 #### 두 번째 삽질
 8월 4일 기능 구현을 마무리하고 친구에게 Repository를 공유했는데, 아래와 같은 피드백을 받았습니다.
