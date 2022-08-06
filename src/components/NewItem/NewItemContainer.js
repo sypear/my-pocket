@@ -29,9 +29,9 @@ const NewItemContainer = (props) => {
         <div className="new-item__container" style={{cursor: !isEditing ? 'pointer' : 'auto'}}>
             {
                 !isEditing &&
-                <div className="fs-normal fw-bold add-new-item-button" onClick={startEditingHandler}>
+                <button className="fs-normal fw-bold add-new-item-button" onClick={startEditingHandler}>
                     내역 추가하기
-                </div>
+                </button>
             }
             {
                 isEditing &&

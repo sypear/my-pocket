@@ -40,11 +40,13 @@ const Item = (props) => {
                 <DateLabel date={props.date} />
 
                 <div className="item__title">
-                    <div
+                    <button
                         className="item__delete-button fs-tiny btn-navy"
                         style={{display: isItemClick === true ? "flex" : "none"}}
                         onClick={deleteButtonClickHandler}
-                    ></div>
+                    >
+                        <span className="sr-only">아이템 삭제</span>
+                    </button>
                     <h3 className="fs-normal fw-regular">
                         {itemTitle}
                     </h3>
