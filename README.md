@@ -1,7 +1,7 @@
 # My Pocket
 ![7](https://user-images.githubusercontent.com/105365737/182876914-b3bacbb3-73e1-4217-b2e4-ff87c3e70d93.gif)
 > React 연습을 위해 진행한 가계부 프로젝트입니다.<br/>
-> 선택한 연도 별도 별로 수입/지출 내용을 확인할 수 있고, 월별 지출 차트를 통해 해당 연도의 월별 지출 현황을 확인할 수 있습니다.<br/><br/>
+> 선택한 연도 별로 수입/지출 내역을 확인할 수 있고, 월별 지출 차트를 확인할 수 있습니다.<br/><br/>
 > Velog 포스팅 보러가기 : <a href="https://velog.io/@sypear/React-%EA%B0%80%EA%B3%84%EB%B6%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-My-Pocket">[React] 가계부 프로젝트 | My Pocket</a><br/>
 > 데모 페이지 : https://sypear.github.io/my-pocket/ (반응형 디자인 미적용) <br/>
 <br/>
