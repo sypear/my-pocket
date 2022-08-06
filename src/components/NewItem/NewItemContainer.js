@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-
-import NewItemForm from "./NewItemForm";
-
-import "./NewItemContainer.css";
 import NewItem from "./NewItem";
+import "./NewItemContainer.css";
 
 const NewItemContainer = (props) => {
     const [isEditing, setIsEditing] = useState(false);
 
-    const startEditingHandler = (event) => {
-        event.stopPropagation();
-
+    const startEditingHandler = () => {
         setIsEditing(true);
     };
 
@@ -31,8 +26,17 @@ const NewItemContainer = (props) => {
     };
 
     return (
-        <div className="new-item-container" style={{textAlign: !isEditing ? 'center' : 'left', cursor: !isEditing ? 'pointer' : 'auto'}} onClick={startEditingHandler}>
-            <NewItem isEditing={isEditing} onAddItem={addItemHandler} onCancelAddItem={stopEditingHandler} />
+        <div className="new-item__container" style={{textAlign: !isEditing ? 'center' : 'left', cursor: !isEditing ? 'pointer' : 'auto'}}>
+            {
+                !isEditing &&
+                <div className="fs-normal fw-bold add-new-item-button" onClick={startEditingHandler}>
+                    내역 추가하기
+                </div>
+            }
+            {
+                isEditing &&
+                <NewItem onAddItem={addItemHandler} onCancelAddItem={stopEditingHandler} />
+            }
         </div>
     );
 };

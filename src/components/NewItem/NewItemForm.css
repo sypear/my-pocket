@@ -1,31 +1,31 @@
-.new-asset__control {
+.new-item__form-info {
     display: flex;
     flex-flow: column;
     margin-bottom: 20px;
 }
 
-.new-asset__control h2 {
+.new-item__form-info h2 {
     margin-bottom: 5px;
 }
 
-.new-asset__control input[type='date'],
-.new-asset__control input[type='text'],
-.new-asset__control input[type='number'] {
+.new-item__form-info input[type='date'],
+.new-item__form-info input[type='text'],
+.new-item__form-info input[type='number'] {
     padding: 6px 9px;
     border: 1px solid #D9D9D9;
     border-radius: 5px;
 }
 
-.new-asset__control input[type='number'] {
+.new-item__form-info input[type='number'] {
     margin-bottom: 2px;
 }
 
-.new-asset__control--title {
+.new-item__form-info--title {
     display: flex;
     align-items: baseline;
 }
 
-.new-asset__control--title h2 {
+.new-item__form-info--title h2 {
     margin-right: 10px;
 }
 
@@ -57,12 +57,12 @@
     accent-color: #5D5FEF;
 }
 
-.new-asset__actions {
+.new-item__form-actions {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.new-asset__actions button:first-child {
+.new-item__form-actions button:first-child {
     margin-right: 32px;
 }

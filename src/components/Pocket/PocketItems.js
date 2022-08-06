@@ -1,11 +1,11 @@
 import React from "react";
 import Item from "../Item/Item";
-import "./PocketItemList.css";
+import "./PocketItems.css";
 
-const PocketItemList = (props) => {
+const PocketItems = (props) => {
     if (props.filteredItems.length === 0) {
         return (
-            <div className="pocket__item-list">
+            <div className="pocket__items">
                 <span className="fw-light fs-normal" style={{display: "block", textAlign: "center"}}>
                     입력된 데이터가 없어요 🙅
                 </span>
@@ -29,7 +29,7 @@ const PocketItemList = (props) => {
     };
 
     return (
-        <div className="pocket__item-list">
+        <div className="pocket__items">
             {
                 sortedFilteredItems.map(item => (
                     <Item
@@ -47,4 +47,4 @@ const PocketItemList = (props) => {
     );
 };
 
-export default PocketItemList;
+export default PocketItems;

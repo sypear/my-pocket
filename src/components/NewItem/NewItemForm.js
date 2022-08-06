@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
 import { enteredOnlyNumber, addComma, deleteComma } from "../../utils/numberUtils.js";
-
 import "./NewItemForm.css";
 
 const NewItemForm = (props) => {
@@ -66,87 +64,85 @@ const NewItemForm = (props) => {
     };
 
     return (
-        <form onSubmit={submitHandler}>
-            <div className="new-asset__controls">
-                <div className="new-asset__control">
-                    <h2 className="fs-normal fw-regular">날짜</h2>
-                    <input
-                        type="date"
-                        value={enteredDate}
-                        onChange={dateChangeHandler}
-                        min="2020-01-01"
-                        max={getDate()}
-                        required />
+        <form className="new-item__form" onSubmit={submitHandler}>
+            <div className="new-item__form-info">
+                <h2 className="fs-normal fw-regular">날짜</h2>
+                <input
+                    type="date"
+                    value={enteredDate}
+                    onChange={dateChangeHandler}
+                    min="2020-01-01"
+                    max={getDate()}
+                    required />
+            </div>
+
+            <div className="new-item__form-info">
+                <div className="new-item__form-info--title">
+                    <h2 className="fs-normal fw-regular">제목</h2>
+                    <span
+                        className="fs-tiny ft-alert"
+                        style={{display: isWrongTitle ? 'inline-block' : 'none'}}
+                    >
+                        {TITLE_SIZE}자까지만 입력할 수 있어요.
+                    </span>
+                </div>
+                <input
+                    type="text"
+                    value={enteredTitle}
+                    onChange={titleChangeHandler}
+                    placeholder="사용 내역을 입력해주세요."
+                    maxLength={TITLE_SIZE}
+                    required />
+            </div>
+
+            <div className="new-item__form-info">
+                <div className="new-item__form-info--title">
+                    <h2 className="fs-normal fw-regular">금액</h2>
+                    <span
+                        className="fs-tiny ft-alert"
+                        style={{display: isWrongAmount ? 'inline-block' : 'none'}}
+                    >
+                    10억 미만의 정수만 입력할 수 있어요.
+                    </span>
                 </div>
 
-                <div className="new-asset__control">
-                    <div className="new-asset__control--title">
-                        <h2 className="fs-normal fw-regular">제목</h2>
-                        <span
-                            className="fs-tiny ft-alert"
-                            style={{display: isWrongTitle ? 'inline-block' : 'none'}}
-                        >
-                            {TITLE_SIZE}자까지만 입력할 수 있어요.
-                        </span>
+                <input
+                    type="text"
+                    value={enteredAmount}
+                    onChange={amountChangeHandler}
+                    placeholder="금액을 입력해주세요."
+                    maxLength="11"
+                    required />
+
+                <div className="amount__type">
+                    <div className="amount__income">
+                        <input
+                            type="radio"
+                            id="income"
+                            name="amount-type"
+                            value="income"
+                            onChange={amountTypeChangeHandler}
+                            checked={enteredAmountType === "income" || ""}
+                            required />
+                        <label htmlFor="income" className="fs-small">수입</label>
                     </div>
-                    <input
-                        type="text"
-                        value={enteredTitle}
-                        onChange={titleChangeHandler}
-                        placeholder="사용 내역을 입력해주세요."
-                        maxLength={TITLE_SIZE}
-                        required />
-                </div>
-
-                <div className="new-asset__control">
-                    <div className="new-asset__control--title">
-                        <h2 className="fs-normal fw-regular">금액</h2>
-                        <span
-                            className="fs-tiny ft-alert"
-                            style={{display: isWrongAmount ? 'inline-block' : 'none'}}
-                        >
-                        10억 미만의 정수만 입력할 수 있어요.
-                        </span>
-                    </div>
-
-                    <input
-                        type="text"
-                        value={enteredAmount}
-                        onChange={amountChangeHandler}
-                        placeholder="금액을 입력해주세요."
-                        maxLength="11"
-                        required />
-
-                    <div className="amount__type">
-                        <div className="amount__income">
-                            <input
-                                type="radio"
-                                id="income"
-                                name="amount-type"
-                                value="income"
-                                onChange={amountTypeChangeHandler}
-                                checked={enteredAmountType === "income" || ""}
-                                required />
-                            <label htmlFor="income" className="fs-small">수입</label>
-                        </div>
-                        <div className="amount__expense">
-                            <input
-                                type="radio"
-                                id="expense"
-                                name="amount-type"
-                                value="expense"
-                                onChange={amountTypeChangeHandler}
-                                checked={enteredAmountType === "expense" || ""}
-                                required />
-                            <label htmlFor="expense" className="fs-small">지출</label>
-                        </div>
+                    <div className="amount__expense">
+                        <input
+                            type="radio"
+                            id="expense"
+                            name="amount-type"
+                            value="expense"
+                            onChange={amountTypeChangeHandler}
+                            checked={enteredAmountType === "expense" || ""}
+                            required />
+                        <label htmlFor="expense" className="fs-small">지출</label>
                     </div>
                 </div>
+            </div>
 
-                <div className="new-asset__actions">
-                    <button type="submit" className="btn-purple">등록</button>
-                    <button type="button" className="btn-white" onClick={props.onCancelAddItem}>취소</button>
-                </div>
+            <div className="new-item__form-actions">
+                <button type="submit" className="btn-purple">등록</button>
+                <button type="button" className="btn-white" onClick={props.onCancelAddItem}>취소</button>
             </div>
         </form>
     );

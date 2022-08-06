@@ -1,4 +1,5 @@
-.pocket-container {
+.pocket__container {
+    position: relative;
     width: 438px;
     padding: 57px 43px;
     margin: 30px auto;

@@ -1,20 +1,8 @@
-.new-item__create-button {
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.new-item__create-area h1 {
+.new-item h1 {
     margin-bottom: 32px;
 }
 
-.new-item__create-area:before {
+.new-item:before {
     content: "";
     position: absolute;
     top: 60px;

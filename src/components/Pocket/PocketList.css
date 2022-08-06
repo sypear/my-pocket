@@ -1,4 +1,4 @@
-.pocket__filter {
+.pocket__list-header {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -6,7 +6,7 @@
     margin-bottom: 37px;
 }
 
-.pocket__filter::before {
+.pocket__list-header::before {
     content: "";
     position: absolute;
     top: 35px;
