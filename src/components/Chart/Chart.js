@@ -3,19 +3,19 @@ import ChartBar from "./ChartBar";
 import "./Chart.css";
 
 const Chart = (props) => {
-    const expensesAmount = props.expenses.map(expense => expense.amount);
-    const maxAmount = Math.max(...expensesAmount);
+    const amountOfChartDatas = props.chartDatas.map(data => data.amount);
+    const maximumAmountOfChartDatas = Math.max(...amountOfChartDatas);
 
     return (
         <div className="chart">
             {
-                props.expenses.map((expense) => (
+                props.chartDatas.map((expense) => (
                     <ChartBar
                         key={expense.month}
                         year={props.filterBaseYear}
-                        month={expense.month}
+                        label={expense.label}
                         amount={expense.amount}
-                        maxAmount={maxAmount}
+                        maximumAmount={maximumAmountOfChartDatas}
                     />
                 ))
             }

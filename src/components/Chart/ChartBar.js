@@ -4,15 +4,14 @@ import "./ChartBar.css";
 
 const ChartBar = (props) => {
     const [isShowAmount, setIsShowAmount] = useState(false);
-    const fillBarStyle = props.amount === props.maxAmount ? "5px" : "";
-    const expenseYear = props.year;
-    const expenseMonth = props.month;
-    const expenseAmount = addComma(props.amount.toString());
-
+    const fillBarStyle = props.amount === props.maximumAmount ? "5px" : "";
+    const year = props.year;
+    const month = props.label;
+    const amount = addComma(props.amount.toString());
     let fillHeight = "0%";
 
-    if (props.maxAmount > 0) {
-        fillHeight = Math.round((props.amount / props.maxAmount) * 100) + "%";
+    if (props.maximumAmount > 0) {
+        fillHeight = Math.round((props.amount / props.maximumAmount) * 100) + "%";
     }
 
     const showAmountHandler = () => {
@@ -31,15 +30,15 @@ const ChartBar = (props) => {
                     style={{height: fillHeight, borderRadius: fillBarStyle}}
                     onMouseOver={showAmountHandler}
                     onMouseOut={hideAmountHandler}
-                    aria-label={`${expenseYear}년 ${expenseMonth}월 지출 금액: ${expenseAmount}원`}>
+                    aria-label={`${year}년 ${month}월 지출 금액: ${amount}원`}>
                         {
                             isShowAmount &&
-                            <div className="chart-bar__expense fs-tiny fw-bold">{expenseAmount}</div>
+                            <div className="chart-bar__expense fs-tiny fw-bold">{amount}</div>
                         }
                 </div>
             </div>
             <strong className="fs-tiny fw-light">
-                {expenseMonth}월
+                {month}월
             </strong>
         </div>
     );
