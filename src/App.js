@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import NewItemContainer from "./components/NewItem/NewItemContainer";
 import PocketContainer from "./components/Pocket/PocketContainer";
 import "./styles/reset.css";
-import "./components/UI/Font.css";
-import "./components/UI/Button.css";
+import "./styles/font.css";
+import "./styles/button.css";
 
 const App = () => {
 	const [isAddItem, setIsAddItem] = useState(false);
