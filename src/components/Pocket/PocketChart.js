@@ -5,6 +5,7 @@ import "./PocketChart.css";
 const PocketChart = (props) => {
     const monthlyExpenseData = [
         { label: '1', amount: 0 },
+        { label: '2', amount: 0 },
         { label: '3', amount: 0 },
         { label: '4', amount: 0 },
         { label: '5', amount: 0 },
