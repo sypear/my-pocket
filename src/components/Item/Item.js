@@ -23,7 +23,7 @@ const Item = (props) => {
             setIsItemClick(false);
         }
 
-        setItemClickCount(prevClickCount => prevClickCount+1);
+        setItemClickCount(prevClickCount => prevClickCount + 1);
     }
 
     const deleteButtonClickHandler = (event) => {
@@ -33,21 +33,25 @@ const Item = (props) => {
     }
 
     return (
-        <div className={itemStyle} onClick={itemClickHandler}>
+        <div className={itemStyleByAmountType} onClick={itemClickHandler}>
             <div>
                 <DateLabel date={props.date} />
+
                 <div className="item__title">
                     <div
-                        className="fs-tiny btn-navy item__remove-btn"
+                        className="item__delete-button fs-tiny btn-navy"
                         style={{display: isItemClick === true ? "flex" : "none"}}
                         onClick={deleteButtonClickHandler}>
-                        X
                     </div>
-                    <h3 className="fs-normal fw-regular">{props.title}</h3>
+                    <h3 className="fs-normal fw-regular">
+                        {itemTitle}
+                    </h3>
                 </div>
             </div>
             <div>
-                <strong className={fontStyle}>{sign}{addComma(props.amount.toString())}</strong>
+                <strong className={fontStyleByAmountType}>
+                    {itemAmount}
+                </strong>
             </div>
         </div>
     );

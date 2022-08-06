@@ -8,7 +8,7 @@ const Filter = (props) => {
     
     return (
         <select
-            className="fw-light filter"
+            className="filter fw-light"
             id="filter"
             name="filter"
             value={props.filterBaseYear}
