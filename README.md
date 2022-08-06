@@ -214,10 +214,13 @@ useEffect를 이용해서 props.filteredItems이 변할 때만 상태를 업데�
 <br/>
 
 <img src="https://user-images.githubusercontent.com/105365737/183237615-15002bc0-f773-46a2-9b9f-4b5c086bceb3.jpg" width="400">
-이런 피드백을 받았습니다.<br/><br/>
+
+<br/>
 
 React에서 이미지, font등을 저장하는 폴더 명을 주로 assets으로 사용한다는 걸 모른 채로 내역 추가 컴포넌트명을 NewAsset, 자산 관련 컴포넌트명을 Asset이라고 지었었고.. (아래 이미지 참조)
 ![원래2](https://user-images.githubusercontent.com/105365737/183238143-a9c339dc-7236-42f2-8cb7-e4e1c3d8a6f8.png)
+
+<br/>
 
 이로 인해 asset이 들어가는 컴포넌트명, 함수명, 변수명을 전부 변경하느라 정말 힘들었습니다. (discard를 엄청 했습니다😂) <br/>
 조금이라도 더 찾아보고 더 생각해봤다면 이런 일은 없었을텐데.. 이 날의 삽질을 바탕으로 앞으론 이러지 말자고 다짐하게 됐습니다.
