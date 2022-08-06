@@ -34,7 +34,7 @@ const Pocket = (props) => {
     };
 
     return (
-        <div className="list">
+        <div className="pocket">
             <PocketStatus filteredItems={filteredItems} filterBaseYear={filterBaseYear} />
             <PocketFilter onChangeFilter={filterChangeHandler} filterBaseYear={filterBaseYear} />
             <PocketItemList filteredItems={filteredItems} onDeleteItem={deleteItemHandler} />
