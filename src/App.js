@@ -4,6 +4,7 @@ import PocketContainer from "./components/Pocket/PocketContainer";
 import "./styles/reset.css";
 import "./styles/font.css";
 import "./styles/button.css";
+import "./styles/common.css";
 
 const App = () => {
 	const [isAddItem, setIsAddItem] = useState(false);
