@@ -7,13 +7,15 @@ const Item = (props) => {
     const [isItemClick, setIsItemClick] = useState(false);
     const [itemClickCount, setItemClickCount] = useState(0);
 
-    const itemStyle = "item expense-item " + props.amountType;
-    let fontStyle = "fs-emphasis fc-green";
-    let sign = "+";
+    const itemStyleByAmountType = "item " + props.amountType;
+    let fontStyleByAmountType = "fs-emphasis fc-green";
+
+    const itemTitle = props.title;
+    let itemAmount = "+" + addComma(props.amount.toString());
 
     if (props.amountType === "expense") {
-        fontStyle = "fs-emphasis fc-red";
-        sign = "-";
+        fontStyleByAmountType = fontStyleByAmountType.replace("green", "red");
+        itemAmount = itemAmount.replace("+", "-");
     }
 
     const itemClickHandler = () => {
