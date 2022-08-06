@@ -42,7 +42,7 @@
 * Item : 개별 아이템 컴포넌트
 <br/>
 
-* NewItem : 내역 추가 관련 컴포넌트
+* NewItemContainer : 내역 추가 관련 컴포넌트
   - NewItem : 내역 추가 영역
     - NewItemForm : 내역 추가 폼
 <br/>
