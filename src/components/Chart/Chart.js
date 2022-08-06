@@ -11,7 +11,7 @@ const Chart = (props) => {
             {
                 props.chartDatas.map((expense) => (
                     <ChartBar
-                        key={expense.month}
+                        key={expense.label}
                         year={props.filterBaseYear}
                         label={expense.label}
                         amount={expense.amount}

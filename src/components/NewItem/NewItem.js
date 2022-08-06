@@ -14,7 +14,10 @@ const NewItem = (props) => {
     return (
         <div className="new-item">
             <h1 className="fs-normal">내역 추가</h1>
-            <NewItemForm onAddItem={addItemHandler} onCancelAddItem={stopEditingHandler} />
+            <NewItemForm
+                onAddItem={addItemHandler}
+                onCancelAddItem={stopEditingHandler}
+            />
         </div>
     );
 };

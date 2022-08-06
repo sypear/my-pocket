@@ -16,9 +16,15 @@ const PocketList = (props) => {
         <div className="pocket__list">
             <div className="pocket__list-header">
                 <h2 className="fs-normal">연간 내역</h2>
-                <Filter onChangeFilter={filterChangeHandler} filterBaseYear={props.filterBaseYear} />
+                <Filter
+                    onChangeFilter={filterChangeHandler}
+                    filterBaseYear={props.filterBaseYear}
+                />
             </div>
-            <PocketItems filteredItems={props.filteredItems} onDeleteItem={deleteItemHandler} />
+            <PocketItems
+                filteredItems={props.filteredItems}
+                onDeleteItem={deleteItemHandler}
+            />
         </div>
     );
 };

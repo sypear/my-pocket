@@ -14,7 +14,7 @@ const PocketStatus = (props) => {
         if (props.filteredItems.length > 0) {
             // 자산, 수입, 지출 합계 계산
             props.filteredItems.forEach(item => {
-                if (item.amount_type === "income") {
+                if (item.amountType === "income") {
                     total.balance += +item.amount;
                     total.income += +item.amount;
                 } else {
@@ -33,17 +33,23 @@ const PocketStatus = (props) => {
         <div className="pocket__status">
             <div className="pocket__status-title">
                 <h1 className="fs-normal fw-light">{twoDigitYear}년 자산 현황</h1>
-                <strong className="fs-title">{addComma(totalBalance.toString())}원</strong>
+                <strong className="fs-title">
+                    {addComma(totalBalance.toString())}원
+                </strong>
             </div>
 
             <div className="pocket__status-detail">
                 <div className="pocket__status-detail--desc">
                     <span className="fs-normal fw-light">수입</span>
-                    <strong className="fs-emphasis fc-green">{addComma(totalIncome.toString())}원</strong>
+                    <strong className="fs-emphasis fc-green">
+                        {addComma(totalIncome.toString())}원
+                    </strong>
                 </div>
                 <div className="pocket__status-detail--desc">
                     <span className="fs-normal fw-light">지출</span>
-                    <strong className="fs-emphasis fc-red">{addComma(totalExpense.toString())}원</strong>
+                    <strong className="fs-emphasis fc-red">
+                        {addComma(totalExpense.toString())}원
+                    </strong>
                 </div>
             </div>
         </div>

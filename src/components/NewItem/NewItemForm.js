@@ -10,8 +10,8 @@ const NewItemForm = (props) => {
     const [enteredAmount, setEnteredAmount] = useState("");
     const [enteredAmountType, setEnteredAmountType] = useState("income");
 
-    const [isWrongTitle, setIsWrongTitle] = useState(false);
-    const [isWrongAmount, setIsWrongAmount] = useState(false);
+    const [isTitleSizeOver, setIsTitleSizeOver] = useState(false);
+    const [isEnteredWrongAmount, setIsEnteredWrongAmount] = useState(false);
 
     const getDate = () => {
         return new Date().toISOString().substring(0, 10);
@@ -23,18 +23,15 @@ const NewItemForm = (props) => {
 
     const titleChangeHandler = (event) => {
         let isSizeOver = event.target.value.length > TITLE_SIZE ? true : false;
-        setIsWrongTitle(isSizeOver);
+        setIsTitleSizeOver(isSizeOver);
 
         setEnteredTitle(event.target.value);
     };
 
     const amountChangeHandler = (event) => {
         let isNotNumber = /^[^1-9][^0-9]{0,11}$/g.test(event.target.value) ? true : false;
-        setIsWrongAmount(isNotNumber);
-
-        if (isNotNumber) {
-            return;
-        }
+        setIsEnteredWrongAmount(isNotNumber);
+        if (isNotNumber) return;
 
         let amount = addComma(enteredOnlyNumber(event.target.value));
         setEnteredAmount(amount);
@@ -51,7 +48,7 @@ const NewItemForm = (props) => {
             date: new Date(enteredDate),
             title: enteredTitle,
             amount: deleteComma(enteredAmount),
-            amount_type: enteredAmountType
+            amountType: enteredAmountType
         };
 
         props.onAddItem(enteredData); // 부모 컴포넌트로 enteredData 전달
@@ -73,7 +70,8 @@ const NewItemForm = (props) => {
                     onChange={dateChangeHandler}
                     min="2020-01-01"
                     max={getDate()}
-                    required />
+                    required
+                />
             </div>
 
             <div className="new-item__form-info">
@@ -81,7 +79,7 @@ const NewItemForm = (props) => {
                     <h2 className="fs-normal fw-regular">제목</h2>
                     <span
                         className="fs-tiny ft-alert"
-                        style={{display: isWrongTitle ? 'inline-block' : 'none'}}
+                        style={{display: isTitleSizeOver ? 'inline-block' : 'none'}}
                     >
                         {TITLE_SIZE}자까지만 입력할 수 있어요.
                     </span>
@@ -92,7 +90,8 @@ const NewItemForm = (props) => {
                     onChange={titleChangeHandler}
                     placeholder="사용 내역을 입력해주세요."
                     maxLength={TITLE_SIZE}
-                    required />
+                    required
+                />
             </div>
 
             <div className="new-item__form-info">
@@ -100,9 +99,9 @@ const NewItemForm = (props) => {
                     <h2 className="fs-normal fw-regular">금액</h2>
                     <span
                         className="fs-tiny ft-alert"
-                        style={{display: isWrongAmount ? 'inline-block' : 'none'}}
+                        style={{display: isEnteredWrongAmount ? 'inline-block' : 'none'}}
                     >
-                    10억 미만의 정수만 입력할 수 있어요.
+                        10억 미만의 정수만 입력할 수 있어요.
                     </span>
                 </div>
 
@@ -112,7 +111,8 @@ const NewItemForm = (props) => {
                     onChange={amountChangeHandler}
                     placeholder="금액을 입력해주세요."
                     maxLength="11"
-                    required />
+                    required
+                />
 
                 <div className="amount__type">
                     <div className="amount__income">
@@ -123,7 +123,8 @@ const NewItemForm = (props) => {
                             value="income"
                             onChange={amountTypeChangeHandler}
                             checked={enteredAmountType === "income" || ""}
-                            required />
+                            required
+                        />
                         <label htmlFor="income" className="fs-small">수입</label>
                     </div>
                     <div className="amount__expense">
@@ -134,7 +135,8 @@ const NewItemForm = (props) => {
                             value="expense"
                             onChange={amountTypeChangeHandler}
                             checked={enteredAmountType === "expense" || ""}
-                            required />
+                            required
+                        />
                         <label htmlFor="expense" className="fs-small">지출</label>
                     </div>
                 </div>

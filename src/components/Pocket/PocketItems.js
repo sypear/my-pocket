@@ -38,7 +38,7 @@ const PocketItems = (props) => {
                         date={item.date}
                         title={item.title}
                         amount={item.amount}
-                        amountType={item.amount_type}
+                        amountType={item.amountType}
                         onDeleteItem={deleteItemHandler}
                     />
                 ))

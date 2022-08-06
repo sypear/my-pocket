@@ -12,21 +12,23 @@ const App = () => {
 
 	useEffect(() => {
 		const localItems = JSON.parse(localStorage.getItem("items"));
-		const localNextItemId = +localStorage.getItem("nextItemId");
 
 		if (localItems === null) {
 			localStorage.setItem("items", JSON.stringify(items));
 			localStorage.setItem("nextItemId", nextItemId);
-		} else {
-			let copyLocalItems = [...localItems];
 
-			copyLocalItems.forEach((element, i) => {
-				copyLocalItems[i].date = new Date(element.date)
-			});
-
-			setItems(copyLocalItems);
-			setNextItemId(localNextItemId);
+			return;
 		}
+
+		const localNextItemId = +localStorage.getItem("nextItemId");
+		let copyLocalItems = [...localItems];
+
+		copyLocalItems.forEach((item, index) => {
+			copyLocalItems[index].date = new Date(item.date)
+		});
+
+		setItems(copyLocalItems);
+		setNextItemId(localNextItemId);
 	}, []);
 
 	useEffect(() => {
@@ -54,8 +56,15 @@ const App = () => {
 
 	return (
 		<>
-			<PocketContainer items={items} onDeleteItem={deleteItemHandler} isAddItem={isAddItem} />
-			<NewItemContainer nextItemId={nextItemId} onAddItem={addItemHandler} />
+			<PocketContainer
+				items={items}
+				onDeleteItem={deleteItemHandler}
+				isAddItem={isAddItem}
+			/>
+			<NewItemContainer
+				nextItemId={nextItemId}
+				onAddItem={addItemHandler}
+			/>
 		</>
 	);
 };

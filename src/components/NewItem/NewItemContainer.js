@@ -35,7 +35,10 @@ const NewItemContainer = (props) => {
             }
             {
                 isEditing &&
-                <NewItem onAddItem={addItemHandler} onCancelAddItem={stopEditingHandler} />
+                <NewItem
+                    onAddItem={addItemHandler}
+                    onCancelAddItem={stopEditingHandler}
+                />
             }
         </div>
     );

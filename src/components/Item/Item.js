@@ -43,8 +43,8 @@ const Item = (props) => {
                     <div
                         className="item__delete-button fs-tiny btn-navy"
                         style={{display: isItemClick === true ? "flex" : "none"}}
-                        onClick={deleteButtonClickHandler}>
-                    </div>
+                        onClick={deleteButtonClickHandler}
+                    ></div>
                     <h3 className="fs-normal fw-regular">
                         {itemTitle}
                     </h3>

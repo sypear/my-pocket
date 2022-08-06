@@ -20,8 +20,13 @@ const PocketContainer = (props) => {
     }, [props.items]);
 
     if (props.items.length > 0) {
-        filteredItems = props.items.filter(item => item.date.getFullYear().toString() === filterBaseYear);
-        filteredExpenses = filteredItems.filter(item => item.amount_type === "expense");
+        filteredItems = props.items.filter(
+            item => item.date.getFullYear().toString() === filterBaseYear
+        );
+        
+        filteredExpenses = filteredItems.filter(
+            item => item.amountType === "expense"
+        );
     }
 
     const filterChangeHandler = (selectedYear) => {
@@ -34,9 +39,20 @@ const PocketContainer = (props) => {
 
     return (
         <div className="pocket__container">
-            <PocketStatus filteredItems={filteredItems} filterBaseYear={filterBaseYear} />
-            <PocketList onChangeFilter={filterChangeHandler} filterBaseYear={filterBaseYear} filteredItems={filteredItems} onDeleteItem={deleteItemHandler} />
-            <PocketChart filteredExpenses={filteredExpenses} filterBaseYear={filterBaseYear} />
+            <PocketStatus
+                filteredItems={filteredItems}
+                filterBaseYear={filterBaseYear}
+            />
+            <PocketList
+                onChangeFilter={filterChangeHandler}
+                filterBaseYear={filterBaseYear}
+                filteredItems={filteredItems}
+                onDeleteItem={deleteItemHandler}
+            />
+            <PocketChart
+                filteredExpenses={filteredExpenses}
+                filterBaseYear={filterBaseYear}
+            />
         </div>
     );
 };

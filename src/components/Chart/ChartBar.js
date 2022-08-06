@@ -30,11 +30,12 @@ const ChartBar = (props) => {
                     style={{height: fillHeight, borderRadius: fillBarStyle}}
                     onMouseOver={showAmountHandler}
                     onMouseOut={hideAmountHandler}
-                    aria-label={`${year}년 ${month}월 지출 금액: ${amount}원`}>
-                        {
-                            isShowAmount &&
-                            <div className="chart-bar__expense fs-tiny fw-bold">{amount}</div>
-                        }
+                    aria-label={`${year}년 ${month}월 지출 금액: ${amount}원`}
+                >
+                    {
+                        isShowAmount &&
+                        <div className="chart-bar__expense fs-tiny fw-bold">{amount}</div>
+                    }
                 </div>
             </div>
             <strong className="fs-tiny fw-light">
