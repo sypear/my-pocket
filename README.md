@@ -6,6 +6,12 @@
 > 데모 페이지 : https://sypear.github.io/my-pocket/ (반응형 디자인 미적용) <br/>
 <br/>
 
+## 💻 프로젝트 실행 방법
+프로젝트 폴더 안에서 아래 명령어를 실행합니다.
+> npm i <br/>
+> npm start
+<br/>
+
 ## 💪 프로젝트 목적
 * React에 익숙해지자
   - 직접 컴포넌트 구조 생각해보기
@@ -15,14 +21,6 @@
   - 사용자 이벤트 발생 시 state 업데이트 하기
   - props를 이용해 부모 → 자식 컴포넌트로 데이터 전달하기
   - state 끌어올리기를 이용해 자식 → 부모 컴포넌트로 데이터 전달하기(부모 컴포넌트로부터 전달받은 함수에 데이터를 보내는 방식)
-<br/>
-
-## 🌐 지원 브라우저
-> 최종 확인 일자 : 2022-08-04
-
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera |
-| --------- | --------- | --------- | --------- |
-| last version(103.0.1264.77)| last version(103.0.5060.134)| last version(103.0.1)| last version(89.0.4447.83)
 <br/>
 
 ## 🗓️ 프로젝트 일정
@@ -85,6 +83,14 @@
   - [x] 차트에 마우스 오버 시 지출 금액 출력
 * 목표 기능 외 추가 기능
   - [x] 로컬스토리지 저장 기능
+<br/>
+
+## 🌐 지원 브라우저
+> 최종 확인 일자 : 2022-08-04
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera |
+| --------- | --------- | --------- | --------- |
+| last version(103.0.1264.77)| last version(103.0.5060.134)| last version(103.0.1)| last version(89.0.4447.83)
 <br/>
 
 ## 🔫 트러블슈팅
