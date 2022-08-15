@@ -33,5 +33,5 @@
 
 ## 👇 자세한 구현 내용 보러가기
 ![오예2](https://user-images.githubusercontent.com/105365737/184570147-bfb8eb05-a7d8-46ac-9354-d6c168360cd6.PNG)
-* Velog 포스팅 (Velog 트렌딩 상위 진출👏)
+* velog 포스팅 (velog 트렌딩 상위 진출👏)
   - <a href="https://velog.io/@sypear/React-%EA%B0%80%EA%B3%84%EB%B6%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-My-Pocket">[React] 가계부 프로젝트 | My Pocket</a>
