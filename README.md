@@ -31,6 +31,14 @@
 > 코드 리팩토링 및 버그 픽스 : 2022-08-05 ~ 2022-08-06
 <br/>
 
+## 🌐 지원 브라우저
+> 확인 일자 : 2022-08-04
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera |
+| --------- | --------- | --------- | --------- |
+| last version(103.0.1264.77)| last version(103.0.5060.134)| last version(103.0.1)| last version(89.0.4447.83)
+<br/>
+
 ## 👇 자세한 구현 내용 보러가기
 ![오예2](https://user-images.githubusercontent.com/105365737/184570147-bfb8eb05-a7d8-46ac-9354-d6c168360cd6.PNG)
 * velog 포스팅 (velog 트렌딩 상위 진출👏)
