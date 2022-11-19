@@ -1,13 +1,13 @@
 .new-item h1 {
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .new-item:before {
-    content: "";
-    position: absolute;
-    top: 60px;
-    width: 352px;
-    height: 0px;
-    opacity: 0.5;
-    border: 1px solid #DEDEDE;
+  content: "";
+  position: absolute;
+  top: 60px;
+  width: 352px;
+  height: 0px;
+  opacity: 0.5;
+  border: 1px solid #DEDEDE;
 }

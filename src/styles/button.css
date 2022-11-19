@@ -1,37 +1,36 @@
 button {
-    border: none;
-    border-radius: 5px;
-    padding: 6px 25px;
-    cursor: pointer;
-    transition: background-color 200ms ease-in,
-                color 200ms ease-in;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 25px;
+  cursor: pointer;
+  transition: background-color 200ms ease-in, color 200ms ease-in;
 }
 
 .btn-purple {
-    color: #FFF;
-    background-color: #5D5FEF;
+  color: #FFF;
+  background-color: #5D5FEF;
 }
 
 .btn-purple:hover {
-    background-color: #0026CA;
+  background-color: #0026CA;
 }
 
 .btn-white {
-    color: #B0BAC9;
-    border: 1px solid #B0BAC9;
-    background-color: #FFF;
+  color: #B0BAC9;
+  border: 1px solid #B0BAC9;
+  background-color: #FFF;
 }
 
 .btn-white:hover {
-    color: #FFF;
-    background-color: #B0BAC9;
+  color: #FFF;
+  background-color: #B0BAC9;
 }
 
 .btn-navy {
-    color: #FFF;
-    background-color: #304FFE;
+  color: #FFF;
+  background-color: #304FFE;
 }
 
 .btn-navy:hover {
-    background-color: #0026CA;
+  background-color: #0026CA;
 }

@@ -1,50 +1,50 @@
 .item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 18px 14px;
-    margin-bottom: 20px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 18px 14px;
+  margin-bottom: 20px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+  cursor: pointer;
 }
 
 .item strong {
-    flex-grow: 1;
-    text-align: end;
+  flex-grow: 1;
+  text-align: end;
 }
 
 .item__title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .item__title h3 {
-    width: 200px;
-    margin-bottom: 4px;
+  width: 200px;
+  margin-bottom: 4px;
 }
 
 .item__delete-button {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 17px;
-    height: 17px;
-    padding: 0;
-    margin: 0 5px 4px 0;
-    text-align: center;
-    letter-spacing: 0;
-    cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 17px;
+  height: 17px;
+  padding: 0;
+  margin: 0 5px 4px 0;
+  text-align: center;
+  letter-spacing: 0;
+  cursor: pointer;
 }
 
 .item__delete-button::before {
-    content: 'X';
+  content: 'X';
 }
 
 .income {
-    border-right: 5px solid #5ADB5A;
+  border-right: 5px solid #5ADB5A;
 }
 
 .expense {
-    border-right: 5px solid #FF5B5B;
+  border-right: 5px solid #FF5B5B;
 }

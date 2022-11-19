@@ -7,67 +7,64 @@ import "./styles/button.css";
 import "./styles/common.css";
 
 const App = () => {
-	const [isAddItem, setIsAddItem] = useState(false);
-	const [nextItemId, setNextItemId] = useState(0);
-	const [items, setItems] = useState([]);
+  const [isAddItem, setIsAddItem] = useState(false);
+  const [nextItemId, setNextItemId] = useState(0);
+  const [items, setItems] = useState([]);
 
-	useEffect(() => {
-		const localItems = JSON.parse(localStorage.getItem("items"));
+  useEffect(() => {
+    const localItems = JSON.parse(localStorage.getItem("items"));
 
-		if (localItems === null) {
-			localStorage.setItem("items", JSON.stringify(items));
-			localStorage.setItem("nextItemId", nextItemId);
+    if (localItems === null) {
+      localStorage.setItem("items", JSON.stringify(items));
+      localStorage.setItem("nextItemId", nextItemId);
 
-			return;
-		}
+      return;
+    }
 
-		const localNextItemId = +localStorage.getItem("nextItemId");
-		let copyLocalItems = [...localItems];
+    const localNextItemId = +localStorage.getItem("nextItemId");
+    let copyLocalItems = [...localItems];
 
-		copyLocalItems.forEach((item, index) => {
-			copyLocalItems[index].date = new Date(item.date)
-		});
+    copyLocalItems.forEach((item, index) => {
+      copyLocalItems[index].date = new Date(item.date);
+    });
 
-		setItems(copyLocalItems);
-		setNextItemId(localNextItemId);
-	}, []);
+    setItems(copyLocalItems);
+    setNextItemId(localNextItemId);
+  }, []);
 
-	useEffect(() => {
-		localStorage.setItem("items", JSON.stringify(items));
-		localStorage.setItem("nextItemId", nextItemId);
-	}, [items]);
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+    localStorage.setItem("nextItemId", nextItemId);
+  }, [items]);
 
-	const addItemHandler = (addItemData) => {
-		setNextItemId(nextItemId + 1);
-		setIsAddItem(true);
-		
-		setItems(prevItems => {
-			return [...prevItems, addItemData];
-		});
-	};
+  const addItemHandler = (addItemData) => {
+    setNextItemId(nextItemId + 1);
+    setIsAddItem(true);
 
-	const deleteItemHandler = (deleteItemData) => {
-		setIsAddItem(false);
+    setItems((prevItems) => {
+      return [...prevItems, addItemData];
+    });
+  };
 
-		let copyItems = [...items];
-		copyItems = copyItems.filter(item => item.id !== deleteItemData);
+  const deleteItemHandler = (deleteItemData) => {
+    setIsAddItem(false);
 
-		setItems(copyItems);
-	};
+    let copyItems = [...items];
+    copyItems = copyItems.filter((item) => item.id !== deleteItemData);
 
-	return (
-		<>
-			<PocketContainer
-				items={items}
-				onDeleteItem={deleteItemHandler}
-				isAddItem={isAddItem}
-			/>
-			<NewItemContainer
-				nextItemId={nextItemId}
-				onAddItem={addItemHandler}
-			/>
-		</>
-	);
+    setItems(copyItems);
+  };
+
+  return (
+    <>
+      <PocketContainer
+        items={items}
+        onDeleteItem={deleteItemHandler}
+        isAddItem={isAddItem}
+      />
+      <NewItemContainer nextItemId={nextItemId} onAddItem={addItemHandler} />
+    </>
+  );
 };
 
 export default App;

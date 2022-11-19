@@ -1,17 +1,17 @@
 .pocket__chart {
-    position: relative;
+  position: relative;
 }
 
 .pocket__chart h2 {
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .pocket__chart::before {
-    content: "";
-    position: absolute;
-    top: 30px;
-    width: 352px;
-    height: 0px;
-    opacity: 0.5;
-    border: 1px solid #DEDEDE;
+  content: "";
+  position: absolute;
+  top: 30px;
+  width: 352px;
+  height: 0px;
+  opacity: 0.5;
+  border: 1px solid #DEDEDE;
 }

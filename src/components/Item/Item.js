@@ -4,61 +4,57 @@ import DateLabel from "../DateLabel/DateLabel";
 import "./Item.css";
 
 const Item = (props) => {
-    const [isItemClick, setIsItemClick] = useState(false);
-    const [itemClickCount, setItemClickCount] = useState(0);
+  const [isItemClick, setIsItemClick] = useState(false);
+  const [itemClickCount, setItemClickCount] = useState(0);
 
-    const itemStyleByAmountType = "item " + props.amountType;
-    let fontStyleByAmountType = "fs-emphasis fc-green";
+  const itemStyleByAmountType = "item " + props.amountType;
+  let fontStyleByAmountType = "fs-emphasis fc-green";
 
-    const itemTitle = props.title;
-    let itemAmount = "+" + addComma(props.amount.toString());
+  const itemTitle = props.title;
+  let itemAmount = "+" + addComma(props.amount.toString());
 
-    if (props.amountType === "expense") {
-        fontStyleByAmountType = fontStyleByAmountType.replace("green", "red");
-        itemAmount = itemAmount.replace("+", "-");
+  if (props.amountType === "expense") {
+    fontStyleByAmountType = fontStyleByAmountType.replace("green", "red");
+    itemAmount = itemAmount.replace("+", "-");
+  }
+
+  const itemClickHandler = () => {
+    if (itemClickCount % 2 === 0) {
+      setIsItemClick(true);
+    } else {
+      setIsItemClick(false);
     }
 
-    const itemClickHandler = () => {
-        if (itemClickCount % 2 === 0) {
-            setIsItemClick(true);
-        } else {
-            setIsItemClick(false);
-        }
+    setItemClickCount((prevClickCount) => prevClickCount + 1);
+  };
 
-        setItemClickCount(prevClickCount => prevClickCount + 1);
-    }
+  const deleteButtonClickHandler = (event) => {
+    event.stopPropagation(); // 이벤트 버블링 막기
 
-    const deleteButtonClickHandler = (event) => {
-        event.stopPropagation(); // 이벤트 버블링 막기
+    props.onDeleteItem(props.id);
+  };
 
-        props.onDeleteItem(props.id);
-    }
+  return (
+    <div className={itemStyleByAmountType} onClick={itemClickHandler}>
+      <div>
+        <DateLabel date={props.date} />
 
-    return (
-        <div className={itemStyleByAmountType} onClick={itemClickHandler}>
-            <div>
-                <DateLabel date={props.date} />
-
-                <div className="item__title">
-                    <button
-                        className="item__delete-button fs-tiny btn-navy"
-                        style={{display: isItemClick === true ? "flex" : "none"}}
-                        onClick={deleteButtonClickHandler}
-                    >
-                        <span className="sr-only">아이템 삭제</span>
-                    </button>
-                    <h3 className="fs-normal fw-regular">
-                        {itemTitle}
-                    </h3>
-                </div>
-            </div>
-            <div>
-                <strong className={fontStyleByAmountType}>
-                    {itemAmount}
-                </strong>
-            </div>
+        <div className="item__title">
+          <button
+            className="item__delete-button fs-tiny btn-navy"
+            style={{ display: isItemClick === true ? "flex" : "none" }}
+            onClick={deleteButtonClickHandler}
+          >
+            <span className="sr-only">아이템 삭제</span>
+          </button>
+          <h3 className="fs-normal fw-regular">{itemTitle}</h3>
         </div>
-    );
+      </div>
+      <div>
+        <strong className={fontStyleByAmountType}>{itemAmount}</strong>
+      </div>
+    </div>
+  );
 };
 
 export default Item;
