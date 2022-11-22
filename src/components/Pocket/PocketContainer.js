@@ -3,6 +3,7 @@ import PocketStatus from "./PocketStatus";
 import PocketChart from "./PocketChart";
 import PocketList from "./PocketList";
 import "./PocketContainer.css";
+import { useCallback } from "react";
 
 const PocketContainer = (props) => {
   const initialFilterBaseYear = new Date().getFullYear().toString();
@@ -29,9 +30,9 @@ const PocketContainer = (props) => {
     );
   }
 
-  const filterChangeHandler = (selectedYear) => {
+  const filterChangeHandler = useCallback((selectedYear) => {
     setFilterBaseYear(selectedYear);
-  };
+  }, []);
 
   const deleteItemHandler = (selectedItemId) => {
     props.onDeleteItem(selectedItemId);

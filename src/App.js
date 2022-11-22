@@ -5,6 +5,7 @@ import "./styles/reset.css";
 import "./styles/font.css";
 import "./styles/button.css";
 import "./styles/common.css";
+import { useCallback } from "react";
 
 const App = () => {
   const [isAddItem, setIsAddItem] = useState(false);
@@ -37,23 +38,18 @@ const App = () => {
     localStorage.setItem("nextItemId", nextItemId);
   }, [items]);
 
-  const addItemHandler = (addItemData) => {
-    setNextItemId(nextItemId + 1);
+  const addItemHandler = useCallback((addItemData) => {
+    setNextItemId((nextItemId) => nextItemId + 1);
     setIsAddItem(true);
+    setItems((prevItems) => [...prevItems, addItemData]);
+  }, []);
 
-    setItems((prevItems) => {
-      return [...prevItems, addItemData];
-    });
-  };
-
-  const deleteItemHandler = (deleteItemData) => {
+  const deleteItemHandler = useCallback((deleteItemData) => {
     setIsAddItem(false);
-
-    let copyItems = [...items];
-    copyItems = copyItems.filter((item) => item.id !== deleteItemData);
-
-    setItems(copyItems);
-  };
+    setItems((items) =>
+      [...items].filter((item) => item.id !== deleteItemData)
+    );
+  }, []);
 
   return (
     <>

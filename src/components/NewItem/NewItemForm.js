@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import {
   enteredOnlyNumber,
   addComma,
@@ -17,9 +17,9 @@ const NewItemForm = (props) => {
   const [isTitleSizeOver, setIsTitleSizeOver] = useState(false);
   const [isEnteredWrongAmount, setIsEnteredWrongAmount] = useState(false);
 
-  const getDate = () => {
+  const getDate = useCallback(() => {
     return new Date().toISOString().substring(0, 10);
-  };
+  }, []);
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);

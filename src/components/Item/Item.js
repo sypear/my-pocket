@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { addComma } from "../../utils/numberUtils.js";
 import DateLabel from "../DateLabel/DateLabel";
 import "./Item.css";
@@ -18,7 +18,7 @@ const Item = (props) => {
     itemAmount = itemAmount.replace("+", "-");
   }
 
-  const itemClickHandler = () => {
+  const itemClickHandler = useCallback(() => {
     if (itemClickCount % 2 === 0) {
       setIsItemClick(true);
     } else {
@@ -26,7 +26,7 @@ const Item = (props) => {
     }
 
     setItemClickCount((prevClickCount) => prevClickCount + 1);
-  };
+  }, [itemClickCount]);
 
   const deleteButtonClickHandler = (event) => {
     event.stopPropagation(); // 이벤트 버블링 막기
