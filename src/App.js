@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import NewItemContainer from "./components/NewItem/NewItemContainer";
 import PocketContainer from "./components/Pocket/PocketContainer";
 import "./styles/reset.css";
@@ -6,6 +6,8 @@ import "./styles/font.css";
 import "./styles/button.css";
 import "./styles/common.css";
 import { useCallback } from "react";
+
+export const ItemDispatchContext = React.createContext();
 
 const App = () => {
   const [isAddItem, setIsAddItem] = useState(false);
@@ -38,27 +40,29 @@ const App = () => {
     localStorage.setItem("nextItemId", nextItemId);
   }, [items]);
 
-  const addItemHandler = useCallback((addItemData) => {
+  const onAdd = useCallback((addItemData) => {
     setNextItemId((nextItemId) => nextItemId + 1);
     setIsAddItem(true);
     setItems((prevItems) => [...prevItems, addItemData]);
   }, []);
 
-  const deleteItemHandler = useCallback((deleteItemData) => {
+  const onRemove = useCallback((deleteItemData) => {
     setIsAddItem(false);
     setItems((items) =>
       [...items].filter((item) => item.id !== deleteItemData)
     );
   }, []);
 
+  const memoizedDispatches = useMemo(() => {
+    return { onAdd, onRemove };
+  }, []);
+
   return (
     <>
-      <PocketContainer
-        items={items}
-        onDeleteItem={deleteItemHandler}
-        isAddItem={isAddItem}
-      />
-      <NewItemContainer nextItemId={nextItemId} onAddItem={addItemHandler} />
+      <ItemDispatchContext.Provider value={memoizedDispatches}>
+        <PocketContainer items={items} isAddItem={isAddItem} />
+        <NewItemContainer nextItemId={nextItemId} onAddItem={onAdd} />
+      </ItemDispatchContext.Provider>
     </>
   );
 };

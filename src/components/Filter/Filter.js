@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { FilterContext } from "../Pocket/PocketContainer";
 import "./Filter.css";
 
-const Filter = (props) => {
-  const filterChangeHandler = (event) => {
-    props.onChangeFilter(event.target.value);
+const Filter = () => {
+  const { onChangeFilter, filterBaseYear } = useContext(FilterContext);
+
+  const handleChangeFilter = (event) => {
+    onChangeFilter(event.target.value);
   };
 
   return (
@@ -11,8 +14,8 @@ const Filter = (props) => {
       className="filter fw-light"
       id="filter"
       name="filter"
-      value={props.filterBaseYear}
-      onChange={filterChangeHandler}
+      value={filterBaseYear}
+      onChange={handleChangeFilter}
       title="년도"
       aria-label="내역을 보고 싶은 년도를 선택하세요."
     >

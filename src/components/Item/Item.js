@@ -1,9 +1,12 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
+import { ItemDispatchContext } from "../../App.js";
 import { addComma } from "../../utils/numberUtils.js";
 import DateLabel from "../DateLabel/DateLabel";
 import "./Item.css";
 
 const Item = (props) => {
+  const { onRemove } = useContext(ItemDispatchContext);
+
   const [isItemClick, setIsItemClick] = useState(false);
   const [itemClickCount, setItemClickCount] = useState(0);
 
@@ -28,10 +31,10 @@ const Item = (props) => {
     setItemClickCount((prevClickCount) => prevClickCount + 1);
   }, [itemClickCount]);
 
-  const deleteButtonClickHandler = (event) => {
+  const handleRemove = (event) => {
     event.stopPropagation(); // 이벤트 버블링 막기
 
-    props.onDeleteItem(props.id);
+    onRemove(props.id);
   };
 
   return (
@@ -43,7 +46,7 @@ const Item = (props) => {
           <button
             className="item__delete-button fs-tiny btn-navy"
             style={{ display: isItemClick === true ? "flex" : "none" }}
-            onClick={deleteButtonClickHandler}
+            onClick={handleRemove}
           >
             <span className="sr-only">아이템 삭제</span>
           </button>

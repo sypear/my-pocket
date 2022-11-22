@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Chart from "../Chart/Chart";
 import "./PocketChart.css";
+import { FilterContext } from "./PocketContainer";
 
 const PocketChart = (props) => {
+  const { filteredExpenses } = useContext(FilterContext);
+
   const monthlyExpenseData = [
     { label: "1", amount: 0 },
     { label: "2", amount: 0 },
@@ -18,7 +21,7 @@ const PocketChart = (props) => {
     { label: "12", amount: 0 },
   ];
 
-  props.filteredExpenses.forEach((expense) => {
+  filteredExpenses.forEach((expense) => {
     const month = expense.date.getMonth();
 
     monthlyExpenseData[month].amount += +expense.amount;
@@ -27,10 +30,7 @@ const PocketChart = (props) => {
   return (
     <div className="pocket__chart">
       <h2 className="fs-normal">월 별 지출 차트</h2>
-      <Chart
-        chartDatas={monthlyExpenseData}
-        filterBaseYear={props.filterBaseYear}
-      />
+      <Chart chartDatas={monthlyExpenseData} />
     </div>
   );
 };

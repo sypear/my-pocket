@@ -1,9 +1,11 @@
-import { React, useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import PocketStatus from "./PocketStatus";
 import PocketChart from "./PocketChart";
 import PocketList from "./PocketList";
 import "./PocketContainer.css";
 import { useCallback } from "react";
+
+export const FilterContext = React.createContext();
 
 const PocketContainer = (props) => {
   const initialFilterBaseYear = new Date().getFullYear().toString();
@@ -30,30 +32,21 @@ const PocketContainer = (props) => {
     );
   }
 
-  const filterChangeHandler = useCallback((selectedYear) => {
+  const onChangeFilter = useCallback((selectedYear) => {
     setFilterBaseYear(selectedYear);
   }, []);
 
-  const deleteItemHandler = (selectedItemId) => {
-    props.onDeleteItem(selectedItemId);
-  };
+  const memoizedFilter = useMemo(() => {
+    return { onChangeFilter, filteredItems, filterBaseYear, filteredExpenses };
+  }, [filteredItems, filterBaseYear]);
 
   return (
     <div className="pocket__container">
-      <PocketStatus
-        filteredItems={filteredItems}
-        filterBaseYear={filterBaseYear}
-      />
-      <PocketList
-        onChangeFilter={filterChangeHandler}
-        filterBaseYear={filterBaseYear}
-        filteredItems={filteredItems}
-        onDeleteItem={deleteItemHandler}
-      />
-      <PocketChart
-        filteredExpenses={filteredExpenses}
-        filterBaseYear={filterBaseYear}
-      />
+      <FilterContext.Provider value={memoizedFilter}>
+        <PocketStatus />
+        <PocketList />
+        <PocketChart />
+      </FilterContext.Provider>
     </div>
   );
 };

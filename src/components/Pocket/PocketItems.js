@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Item from "../Item/Item";
+import { FilterContext } from "./PocketContainer";
 import "./PocketItems.css";
 
-const PocketItems = (props) => {
-  if (props.filteredItems.length === 0) {
+const PocketItems = () => {
+  const { filteredItems } = useContext(FilterContext);
+
+  if (filteredItems.length === 0) {
     return (
       <div className="pocket__items">
         <span
@@ -16,7 +19,7 @@ const PocketItems = (props) => {
     );
   }
 
-  const copyFilteredItems = [...props.filteredItems];
+  const copyFilteredItems = [...filteredItems];
   const sortedFilteredItems = copyFilteredItems.sort((a, b) => {
     // 날짜가 최근일수록 상단에 위치하도록 정렬
     // 만약 날짜가 같다면 id 값이 작은 순으로(최근에 입력한 순으로) 상단에 위치하도록 정렬
@@ -26,10 +29,6 @@ const PocketItems = (props) => {
 
     return new Date(b.date) - new Date(a.date);
   });
-
-  const deleteItemHandler = (selectedItemId) => {
-    props.onDeleteItem(selectedItemId);
-  };
 
   return (
     <div className="pocket__items">
@@ -41,7 +40,6 @@ const PocketItems = (props) => {
           title={item.title}
           amount={item.amount}
           amountType={item.amountType}
-          onDeleteItem={deleteItemHandler}
         />
       ))}
     </div>
