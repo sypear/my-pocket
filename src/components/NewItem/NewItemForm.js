@@ -1,4 +1,5 @@
 import React, { useCallback, useContext, useState } from "react";
+import { ItemDispatchContext } from "../../App.js";
 import {
   enteredOnlyNumber,
   addComma,
@@ -7,6 +8,8 @@ import {
 import "./NewItemForm.css";
 
 const NewItemForm = (props) => {
+  const [{ onAdd }, { nextItemId }] = useContext(ItemDispatchContext);
+
   const TITLE_SIZE = 35;
 
   const [enteredDate, setEnteredDate] = useState("");
@@ -51,13 +54,14 @@ const NewItemForm = (props) => {
     event.preventDefault(); // 페이지 리로드 방지
 
     const enteredData = {
+      id: nextItemId,
       date: new Date(enteredDate),
       title: enteredTitle,
       amount: deleteComma(enteredAmount),
       amountType: enteredAmountType,
     };
 
-    props.onAddItem(enteredData); // 부모 컴포넌트로 enteredData 전달
+    onAdd(enteredData); // 부모 컴포넌트로 enteredData 전달
 
     // 입력창 초기화
     setEnteredDate("");

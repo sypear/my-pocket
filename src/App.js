@@ -57,11 +57,17 @@ const App = () => {
     return { onAdd, onRemove };
   }, []);
 
+  const memoizedNextItemId = useMemo(() => {
+    return { nextItemId };
+  }, [nextItemId]);
+
   return (
     <>
-      <ItemDispatchContext.Provider value={memoizedDispatches}>
+      <ItemDispatchContext.Provider
+        value={[memoizedDispatches, memoizedNextItemId]}
+      >
         <PocketContainer items={items} isAddItem={isAddItem} />
-        <NewItemContainer nextItemId={nextItemId} onAddItem={onAdd} />
+        <NewItemContainer />
       </ItemDispatchContext.Provider>
     </>
   );

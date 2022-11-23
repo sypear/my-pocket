@@ -16,12 +16,6 @@ const NewItemContainer = (props) => {
   };
 
   const addItemHandler = (enteredData) => {
-    const enteredItem = {
-      ...enteredData,
-      id: props.nextItemId,
-    };
-    props.onAddItem(enteredItem);
-
     setIsEditing(false);
   };
 
@@ -38,12 +32,7 @@ const NewItemContainer = (props) => {
           내역 추가하기
         </button>
       )}
-      {isEditing && (
-        <NewItem
-          onAddItem={addItemHandler}
-          onCancelAddItem={stopEditingHandler}
-        />
-      )}
+      {isEditing && <NewItem onCancelAddItem={stopEditingHandler} />}
     </div>
   );
 };

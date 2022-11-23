@@ -5,7 +5,7 @@ import DateLabel from "../DateLabel/DateLabel";
 import "./Item.css";
 
 const Item = (props) => {
-  const { onRemove } = useContext(ItemDispatchContext);
+  const [{ onRemove }] = useContext(ItemDispatchContext);
 
   const [isItemClick, setIsItemClick] = useState(false);
   const [itemClickCount, setItemClickCount] = useState(0);
