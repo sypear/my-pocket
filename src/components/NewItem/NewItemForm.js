@@ -5,10 +5,12 @@ import {
   addComma,
   deleteComma,
 } from "../../utils/numberUtils.js";
+import { StopEditContext } from "./NewItemContainer.js";
 import "./NewItemForm.css";
 
-const NewItemForm = (props) => {
+const NewItemForm = () => {
   const [{ onAdd }, { nextItemId }] = useContext(ItemDispatchContext);
+  const { stopEditingHandler } = useContext(StopEditContext);
 
   const TITLE_SIZE = 35;
 
@@ -68,6 +70,8 @@ const NewItemForm = (props) => {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredAmountType("income");
+
+    stopEditingHandler();
   };
 
   return (
@@ -163,7 +167,7 @@ const NewItemForm = (props) => {
         <button
           type="button"
           className="btn-white"
-          onClick={props.onCancelAddItem}
+          onClick={stopEditingHandler}
         >
           취소
         </button>

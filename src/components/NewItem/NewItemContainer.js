@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import NewItem from "./NewItem";
 import "./NewItemContainer.css";
 
-const NewItemContainer = (props) => {
+export const StopEditContext = React.createContext();
+
+const NewItemContainer = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   const startEditingHandler = () => {
     setIsEditing(true);
   };
 
-  const stopEditingHandler = (event) => {
-    event.stopPropagation();
-
+  const stopEditingHandler = () => {
+    // event.stopPropagation();
     setIsEditing(false);
   };
 
-  const addItemHandler = (enteredData) => {
-    setIsEditing(false);
-  };
+  const memoizedStopEdit = useMemo(() => {
+    return { stopEditingHandler };
+  }, []);
 
   return (
     <div
@@ -32,7 +33,11 @@ const NewItemContainer = (props) => {
           내역 추가하기
         </button>
       )}
-      {isEditing && <NewItem onCancelAddItem={stopEditingHandler} />}
+      {isEditing && (
+        <StopEditContext.Provider value={memoizedStopEdit}>
+          <NewItem />
+        </StopEditContext.Provider>
+      )}
     </div>
   );
 };
